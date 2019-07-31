@@ -381,8 +381,9 @@
     
             for (var i = 0; i < nodeList.length; i++) {
                 var _ret = _loop(i);
-    
-                if (_ret === 'continue') continue;
+                if (_ret === 'continue') {
+                    continue;
+                }
             }
     
             return addedStickies;
@@ -517,4 +518,4 @@
         window.Stickyfill = Stickyfill;
     }
     
-})(window, document);
+})(window, document);]

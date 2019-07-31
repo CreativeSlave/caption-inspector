@@ -1,0 +1,22 @@
+.page-header {
+    background-color: #515ada !important;
+    height: 100%;
+    background: linear-gradient(-90deg, #bbc2ff 0%, #515ada 100%);
+}
+.page-header:after {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}
+
+#clouds {
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    -webkit-transform: translate(-100%, -100%);
+    transform: translate(-100%, -100%);
+    border-radius: 50%;
+    -webkit-filter: url(#cloudsfilter);
+    filter: url(#cloudsfilter);
+    transition: transform 36s ease-in-out;
+}

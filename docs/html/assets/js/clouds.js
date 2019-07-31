@@ -46,36 +46,34 @@ class CloudGenerator {
      * @param element
      * @param baseColor
      */
-    constructor(element, baseColor = "#5579D2"){
-        this.clouds = null;
+    constructor(elementId, filterId, baseColor = "#5579D2"){
+        this.clouds = document.querySelector(elementId);
+        this.filterId = filterId;
         this.baseColor = baseColor;
-        if(typeof element === "string"){
-            this.clouds = document.querySelector(element);
-        } else {
-            this.clouds = element;
-        }
-        this.generate();
+        CloudGenerator.insertDOMFilter(this.filterId);
+        CloudGenerator.debounce(()=>{
+            this.generate();
+        }, 2500);
     }
     /**
      * ### nsert DOM Filter
      * Insert a one time DOM Filter for the CSS and SVG
      */
-    insertDOMFilter(){
-        if(!document.querySelector("#cloudsfilter")){
-            document.body.append(`
+    static insertDOMFilter(filterId){
+        if(!document.querySelector(`#${filterId}`)){
+            document.body.appendChild(`
                 <svg width="0">
-                  <filter id="cloudsfilter">
-                    <feTurbulence type="fractalNoise"
-                      baseFrequency=".01" numOctaves="10" />
+                  <filter id="${filterId}">
+                    <feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="10" />
                     <feDisplacementMap in="SourceGraphic" scale="240" />
                   </filter>
-                </svg>`)
+                </svg>`);
         }
     }
     segment() {
-        return arguments[this.randomize(1, arguments.length) - 1];
+        return arguments[CloudGenerator.randomize(1, arguments.length) - 1];
     }
-    randomize(from, to) {
+    static randomize(from, to) {
         return ~~(Math.random() * (to - from + 1)) + from;
     }
     static boxShadows(max, baseColor) {
@@ -83,20 +81,33 @@ class CloudGenerator {
         for (let i = 0; i < max; ++i) {
             /** DO NOT REFORMAT! */
             ret.push(`
-      ${ this.randomize(1, 100) }vw ${ this.randomize(1, 100) }vh ${ this.randomize(20, 40) }vmin ${ this.randomize(1, 20) }vmin
+      ${ CloudGenerator.randomize(1, 100) }vw ${ CloudGenerator.randomize(1, 100) }vh ${ CloudGenerator.randomize(20, 40) }vmin ${ CloudGenerator.randomize(1, 20) }vmin
       ${ this.segment('#11cbd7', '#c6f1e7', '#f0fff3', baseColor) }
     `)
         }
         return ret.join(',');
     }
+    static debounce(func, wait, immediate) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            }, wait);
+            if (immediate && !timeout) func.apply(context, args);
+        };
+    }
     generate(){
         if(this.clouds){
-            this.insertDOMFilter();
-            this.cloud.style.boxShadow =
-                CloudGenerator
-                    .boxShadows(100, this.baseColor);
+            
+            this.clouds.style.boxShadow =
+                CloudGenerator.boxShadows(60, this.baseColor);
         } else {
-            console.warn("Missing a page")
+            console.warn("Could not find document.querySelector('element [this.clouds] ')")
         }
     }
 }
+
+

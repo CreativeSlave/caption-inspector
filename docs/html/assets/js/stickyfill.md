@@ -226,4 +226,4 @@ Use [Yarn](https://yarnpkg.com/), dont’t forget to commit `yarn.lock`.
 
 ## License
 
-[MIT license](LICENSE).
+[MIT license](../plugins/stickyfill/LICENSE).

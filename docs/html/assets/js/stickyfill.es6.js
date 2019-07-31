@@ -98,12 +98,8 @@ class Sticky {
     refresh () {
         if (seppuku || this._removed) return;
         if (this._active) this._deactivate();
-
         const node = this._node;
-
-        /*
-         * 1. Save node computed props
-         */
+        /** 1. Save node computed props */
         const nodeComputedStyle = getComputedStyle(node);
         const nodeComputedProps = {
             top: nodeComputedStyle.top,
@@ -114,14 +110,11 @@ class Sticky {
             marginRight: nodeComputedStyle.marginRight,
             cssFloat: nodeComputedStyle.cssFloat
         };
-
-        /*
-         * 2. Check if the node can be activated
-         */
+        /** 2. Check if the node can be activated */
         if (
             isNaN(parseFloat(nodeComputedProps.top)) ||
-            nodeComputedProps.display == 'table-cell' ||
-            nodeComputedProps.display == 'none'
+            nodeComputedProps.display === 'table-cell' ||
+            nodeComputedProps.display === 'none'
         ) return;
 
         this._active = true;
@@ -177,8 +170,8 @@ class Sticky {
         const parentPosition = parentComputedStyle.position;
 
         if (
-            parentPosition != 'absolute' &&
-            parentPosition != 'relative'
+            parentPosition !== 'absolute' &&
+            parentPosition !== 'relative'
         ) {
             parentNode.style.position = 'relative';
         }
@@ -220,7 +213,7 @@ class Sticky {
 
         const stickyMode = scroll.top <= this._limits.start? 'start': scroll.top >= this._limits.end? 'end': 'middle';
 
-        if (this._stickyMode == stickyMode) return;
+        if (this._stickyMode === stickyMode) return;
 
         switch (stickyMode) {
             case 'start':
@@ -303,14 +296,12 @@ class Sticky {
 
     remove () {
         this._deactivate();
-
         stickies.some((sticky, index) => {
             if (sticky._node === this._node) {
                 stickies.splice(index, 1);
                 return true;
             }
         });
-
         this._removed = true;
     }
 }

@@ -58,7 +58,7 @@ span.block {
 
 .tooltip-tag {
   display: inline-block;
-  color: #5579D2 !important;
+  color: #4360FF !important;
   cursor: pointer !important;
   text-decoration: underline dotted #ffa700 !important;
 }
@@ -122,13 +122,13 @@ body .docs-wrapper nav.docs-nav.navbar ul.section-items > li a {
   transition: all 0.1s ease-out;
 }
 body .docs-wrapper nav.docs-nav.navbar ul.section-items > li a:hover {
-  color: #5579D2;
+  color: #4360FF;
 }
 body .docs-wrapper nav.docs-nav.navbar ul.section-items > li a:hover * {
-  color: #5579D2;
+  color: #4360FF;
 }
 body .docs-wrapper nav.docs-nav.navbar ul.section-items > li:hover {
-  color: #5579D2;
+  color: #4360FF;
 }
 body .docs-wrapper nav.docs-nav.navbar:hover {
   background-color: white !important;
@@ -184,7 +184,7 @@ body article.docs-article h3.section-heading {
   font-size: calc(24px + (40 - 24) * ((100vw - 300px) / (1600 - 300))) !important;
   margin-top: 15px !important;
   margin-bottom: 2rem !important;
-  color: #5579D2;
+  color: #4360FF;
 }
 body article.docs-article ol, body article.docs-article ul {
   text-align: left;
@@ -205,13 +205,13 @@ body article.docs-article p {
   font-weight: normal;
 }
 body article.docs-article p.section-intro {
-  color: #5579D2 !important;
+  color: #4360FF !important;
   font-weight: 300 !important;
   font-size: 1.4rem !important;
   line-height: 2.2rem !important;
   margin: 3.5rem 0 !important;
   padding-left: 20px;
-  border-left: 15px solid #5579D2 !important;
+  border-left: 15px solid #4360FF !important;
 }
 body article.docs-article section.docs-section {
   border-bottom: 3px solid #c7cdd2 !important;
@@ -244,7 +244,7 @@ body article.docs-article section.docs-section > h4, body article.docs-article s
   font-size: 1.8rem;
   margin-top: 10px;
   margin-bottom: 2.75rem;
-  color: #5579D2;
+  color: #4360FF;
 }
 body article.docs-article section.docs-section h5 {
   font-weight: 700 !important;
@@ -279,16 +279,16 @@ body article.docs-article section.docs-section blockquote, body article.docs-art
   position: relative;
   border-radius: 8px 8px 8px 8px !important;
   width: 100% !important;
-  border-top: 12px solid #5579D2;
-  border-bottom: 4px solid #5579D2;
+  border-top: 12px solid #4360FF;
+  border-bottom: 4px solid #4360FF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: block !important;
   margin: 60px 0px;
   padding: 60px 60px;
-  -webkit-box-shadow: 0px 10px 20px rgba(85, 121, 210, 0.1) !important;
-  -moz-box-shadow: 0px 10px 20px rgba(85, 121, 210, 0.1) !important;
-  box-shadow: 0px 10px 20px rgba(85, 121, 210, 0.1) !important;
+  -webkit-box-shadow: 0px 10px 20px rgba(67, 96, 255, 0.1) !important;
+  -moz-box-shadow: 0px 10px 20px rgba(67, 96, 255, 0.1) !important;
+  box-shadow: 0px 10px 20px rgba(67, 96, 255, 0.1) !important;
   -webkit-transition: all 1s ease-out;
   -moz-transition: all 1s ease-out;
   -o-transition: all 1s ease-out;
@@ -306,7 +306,7 @@ body article.docs-article section.docs-section blockquote h3, body article.docs-
   font-size: 35px !important;
   line-height: 35px !important;
   font-weight: 900 !important;
-  color: #5579D2;
+  color: #4360FF;
 }
 body article.docs-article section.docs-section blockquote h4, body article.docs-article section.docs-section .blockquote h4 {
   font-size: 22px !important;
@@ -380,21 +380,21 @@ body article.docs-article section.docs-section blockquote p.reference a, body ar
   margin: 5px -5px;
   padding: 10px 5px;
   font-size: 14px !important;
-  color: #5579D2;
+  color: #4360FF;
   font-weight: 600 !important;
   text-decoration: none !important;
 }
 body article.docs-article section.docs-section blockquote p.reference a:hover, body article.docs-article section.docs-section blockquote p.reference a.reference-link:hover, body article.docs-article section.docs-section .blockquote p.reference a:hover, body article.docs-article section.docs-section .blockquote p.reference a.reference-link:hover {
-  -webkit-box-shadow: 0px 2.5px 5px rgba(85, 121, 210, 0.2) !important;
-  -moz-box-shadow: 0px 2.5px 5px rgba(85, 121, 210, 0.2) !important;
-  box-shadow: 0px 2.5px 5px rgba(85, 121, 210, 0.2) !important;
+  -webkit-box-shadow: 0px 2.5px 5px rgba(67, 96, 255, 0.2) !important;
+  -moz-box-shadow: 0px 2.5px 5px rgba(67, 96, 255, 0.2) !important;
+  box-shadow: 0px 2.5px 5px rgba(67, 96, 255, 0.2) !important;
   text-decoration: none !important;
   color: white !important;
-  background-color: #5579D2 !important;
+  background-color: #4360FF !important;
 }
 body article.docs-article section.docs-section blockquote p.reference:hover, body article.docs-article section.docs-section .blockquote p.reference:hover {
-  border-color: #5579D2 !important;
-  border-left-color: #5579D2 !important;
+  border-color: #4360FF !important;
+  border-left-color: #4360FF !important;
   padding-bottom: 20px !important;
   color: black;
   background-color: #eef1f3;
@@ -411,9 +411,9 @@ body article.docs-article section.docs-section blockquote p.reference:hover i.ic
   fill: white;
 }
 body article.docs-article section.docs-section blockquote:hover, body article.docs-article section.docs-section .blockquote:hover {
-  -webkit-box-shadow: 0px 40px 80px rgba(85, 121, 210, 0.45) !important;
-  -moz-box-shadow: 0px 40px 80px rgba(85, 121, 210, 0.45) !important;
-  box-shadow: 0px 40px 80px rgba(85, 121, 210, 0.45) !important;
+  -webkit-box-shadow: 0px 40px 80px rgba(67, 96, 255, 0.45) !important;
+  -moz-box-shadow: 0px 40px 80px rgba(67, 96, 255, 0.45) !important;
+  box-shadow: 0px 40px 80px rgba(67, 96, 255, 0.45) !important;
 }
 body article.docs-article section.docs-section blockquote:hover p.reference, body article.docs-article section.docs-section .blockquote:hover p.reference {
   background-color: #f2f4f5;
@@ -426,9 +426,9 @@ body article.docs-article section.docs-section .panel-group {
 body article.docs-article section.docs-section .panel-group .panel {
   margin-top: 35px;
   border-radius: 4px !important;
-  -webkit-box-shadow: 0px 10px 20px rgba(85, 121, 210, 0.1) !important;
-  -moz-box-shadow: 0px 10px 20px rgba(85, 121, 210, 0.1) !important;
-  box-shadow: 0px 10px 20px rgba(85, 121, 210, 0.1) !important;
+  -webkit-box-shadow: 0px 10px 20px rgba(67, 96, 255, 0.1) !important;
+  -moz-box-shadow: 0px 10px 20px rgba(67, 96, 255, 0.1) !important;
+  box-shadow: 0px 10px 20px rgba(67, 96, 255, 0.1) !important;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -441,12 +441,12 @@ body article.docs-article section.docs-section .panel-group .panel .panel-headin
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   border-radius: 4px !important;
-  background-color: #5579D2;
+  background-color: #4360FF;
   text-decoration: none !important;
   color: white;
 }
 body article.docs-article section.docs-section .panel-group .panel .panel-heading:hover {
-  background-color: #7d99dd;
+  background-color: #768bff;
 }
 body article.docs-article section.docs-section .panel-group .panel .panel-heading a {
   text-decoration: none !important;
@@ -513,7 +513,7 @@ body .to-top:before {
 }
 body .to-top:hover {
   bottom: 60px;
-  background-color: #5579D2;
+  background-color: #4360FF;
   color: white;
 }
 body .to-top:hover:before {
@@ -591,21 +591,21 @@ b, .bold {
 }
 
 .text-blue {
-  color: #5579D2 !important;
+  color: #4360FF !important;
 }
 
 .text-dark-blue {
-  color: #5579D2 !important;
+  color: #4360FF !important;
 }
 
 .bg-blue {
   color: #FFFFFF !important;
-  background-color: #5579D2 !important;
+  background-color: #4360FF !important;
 }
 
 .bg-dark-blue {
   color: #FFFFFF !important;
-  background-color: #5579D2 !important;
+  background-color: #4360FF !important;
 }
 
 .lighthouse > img {
@@ -686,7 +686,7 @@ span.outline-indicator {
   position: relative !important;
 }
 .docs-nav .nav-item:focus, .docs-nav .nav-item:active {
-  color: #5579D2 !important;
+  color: #4360FF !important;
 }
 .docs-nav .nav-item.section-title a.nav-link {
   font-weight: 900 !important;
@@ -705,16 +705,16 @@ span.outline-indicator {
 .docs-nav .nav-item.section-title a.nav-link:hover {
   display: block;
   font-weight: 900 !important;
-  color: #5579D2;
+  color: #4360FF;
 }
 .docs-nav .nav-item.section-title a.nav-link:hover .outline-indicator {
-  color: #5579D2 !important;
+  color: #4360FF !important;
 }
 .docs-nav .nav-item.section-title:hover {
   color: black;
 }
 .docs-nav .nav-item.section-title:focus {
-  color: #5579D2 !important;
+  color: #4360FF !important;
 }
 
 a.nav-link {
@@ -731,13 +731,13 @@ a.nav-link {
 .nav-item.section-title a.nav-link {
   font-weight: 700 !important;
   position: relative !important;
-  color: #5579D2;
+  color: #4360FF;
 }
 .nav-item.section-title a.nav-link:focus, .nav-item.section-title a.nav-link:active, .nav-item.section-title a.nav-link .active {
   display: block;
   font-weight: 900 !important;
   position: relative !important;
-  color: #5579D2 !important;
+  color: #4360FF !important;
 }
 .nav-item.section-title a.nav-link:hover {
   display: block;
@@ -800,9 +800,9 @@ table {
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  -webkit-box-shadow: 0px 15px 30px rgba(85, 121, 210, 0.1) !important;
-  -moz-box-shadow: 0px 15px 30px rgba(85, 121, 210, 0.1) !important;
-  box-shadow: 0px 15px 30px rgba(85, 121, 210, 0.1) !important;
+  -webkit-box-shadow: 0px 15px 30px rgba(67, 96, 255, 0.1) !important;
+  -moz-box-shadow: 0px 15px 30px rgba(67, 96, 255, 0.1) !important;
+  box-shadow: 0px 15px 30px rgba(67, 96, 255, 0.1) !important;
   margin-top: 75px;
   margin-bottom: 75px !important;
 }
@@ -818,9 +818,9 @@ table tr:last-child td:last-child {
   border-bottom-right-radius: 8px !important;
 }
 table:hover {
-  -webkit-box-shadow: 0px 30px 60px rgba(85, 121, 210, 0.3) !important;
-  -moz-box-shadow: 0px 30px 60px rgba(85, 121, 210, 0.3) !important;
-  box-shadow: 0px 30px 60px rgba(85, 121, 210, 0.3) !important;
+  -webkit-box-shadow: 0px 30px 60px rgba(67, 96, 255, 0.3) !important;
+  -moz-box-shadow: 0px 30px 60px rgba(67, 96, 255, 0.3) !important;
+  box-shadow: 0px 30px 60px rgba(67, 96, 255, 0.3) !important;
 }
 table.software, table.file-types {
   text-align: left !important;
@@ -893,9 +893,9 @@ img.caption-inspector-logo {
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  -webkit-box-shadow: 0px 30px 60px rgba(85, 121, 210, 0.3) !important;
-  -moz-box-shadow: 0px 30px 60px rgba(85, 121, 210, 0.3) !important;
-  box-shadow: 0px 30px 60px rgba(85, 121, 210, 0.3) !important;
+  -webkit-box-shadow: 0px 30px 60px rgba(67, 96, 255, 0.3) !important;
+  -moz-box-shadow: 0px 30px 60px rgba(67, 96, 255, 0.3) !important;
+  box-shadow: 0px 30px 60px rgba(67, 96, 255, 0.3) !important;
   color: white !important;
   border-radius: 8px !important;
   border-left-width: 60px !important;
@@ -1045,9 +1045,9 @@ img.caption-inspector-logo {
   transition: -webkit-transform 1s;
   -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
-  -webkit-box-shadow: 0px 10px 20px rgba(85, 121, 210, 0.25) !important;
-  -moz-box-shadow: 0px 10px 20px rgba(85, 121, 210, 0.25) !important;
-  box-shadow: 0px 10px 20px rgba(85, 121, 210, 0.25) !important;
+  -webkit-box-shadow: 0px 10px 20px rgba(67, 96, 255, 0.25) !important;
+  -moz-box-shadow: 0px 10px 20px rgba(67, 96, 255, 0.25) !important;
+  box-shadow: 0px 10px 20px rgba(67, 96, 255, 0.25) !important;
 }
 .info-card .front a.icon, .info-card .back a.icon {
   text-decoration: none !important;
@@ -1058,9 +1058,9 @@ img.caption-inspector-logo {
   color: #FFFFFF !important;
 }
 .info-card .front:hover, .info-card .back:hover {
-  -webkit-box-shadow: 0px 40px 80px rgba(85, 121, 210, 0.5) !important;
-  -moz-box-shadow: 0px 40px 80px rgba(85, 121, 210, 0.5) !important;
-  box-shadow: 0px 40px 80px rgba(85, 121, 210, 0.5) !important;
+  -webkit-box-shadow: 0px 40px 80px rgba(67, 96, 255, 0.5) !important;
+  -moz-box-shadow: 0px 40px 80px rgba(67, 96, 255, 0.5) !important;
+  box-shadow: 0px 40px 80px rgba(67, 96, 255, 0.5) !important;
 }
 .info-card .front {
   text-align: center;
