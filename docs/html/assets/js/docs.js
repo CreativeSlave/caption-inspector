@@ -1,6 +1,6 @@
 $(window).on("load resize", function() {
   var w = $(window).width();
-  if (w >= 1200) {
+  if (w >= 1230) {
     $("#docs-sidebar")
       .addClass("sidebar-visible")
       .removeClass("sidebar-hidden");
@@ -23,7 +23,7 @@ const PAGE_URL = (() => {
 })();
 const sectionHeaders =
   '<li class="nav-item section-title" onclick="location.hash=\'{{SECTION}}\'">' +
-  '<a class="nav-link scrollto" href="${PAGE_URL}#{{SECTION}}">' +
+  '<a class="nav-link scrollto" href="./docs-page.html#{{SECTION}}">' +
   '	<span class="theme-icon-holder mr-2">' +
   '		<i class="fas fa-{{ICON}}"></i></span>' +
   '	<div class="outline-indicator">{{ID}}</div>' +
@@ -32,7 +32,7 @@ const sectionHeaders =
 
 const navigationTemplate =
   '<li class="nav-item " onclick="location.hash=\'{{SECTION}}\'">' +
-  '  <a class="nav-link scrollto" href="${PAGE_URL}#{{SECTION}}">' +
+  '  <a class="nav-link scrollto" href="./docs-page.html#{{SECTION}}">' +
   '    <div class="outline-indicator">{{ID}}</div>' +
   "    <span>{{LABEL}}</span>" +
   "  </a>" +
@@ -300,6 +300,20 @@ class RootElement extends NavElement {
   getElement(id) {
     return this.map.get(id);
   }
+  getSearchList(searchTerms) {
+    let searchArray = [];
+    return this.map.entries( (key, value)=>{
+      searchTerms.map((term)=>{
+        let found = value.label.trim().toLowerCase().includes(term.trim().toLowerCase());
+        if(found){
+          console.log("Found term in: ", value.label);
+          searchArray.push(value);
+        }
+      })
+      return value
+    })
+    return searchArray;
+  }
 }
 
 class SearchTags {
@@ -318,17 +332,23 @@ class SearchDocs {
     this.searches = [];
     this.currentSearch = {};
   }
-  search(form) {
-    let field = form.elements[0];
-    let term = ((field && field.value())||  this.field.value()||"").toString().trim();
-    if (term && term !== "") {
-      let currentSearch = this.current;
-      if (currentSearch && currentSearch.terms !== term) {
-        let searchTerm = new SearchTags(term, this.searches.length - 1);
-        this.searches.push(searchTerm);
+  search(id) {
+    let field = document.getElementById(id);
+    if (field){
+      let term = this.field.value.toString().trim();
+      if (term && term !== "") {
+        let currentSearch = this.currentSearch = {
+          terms:term.split(" ")
+        };
+        if (currentSearch) {
+          let searchTerm = new SearchTags(term, this.searches.length - 1);
+          this.searches.push(searchTerm);
+        }
+        console.log(this, BuildNav.JSON.getSearchList(currentSearch.terms));
       }
+      
+      
     }
-    console.log(this);
   }
   get current() {
     if (this.searches.length > 0) {
@@ -348,7 +368,7 @@ class SearchDocs {
 let searchDocs;
 $(document).ready(function() {
   BuildNav.build(() => {
-    $("#docs-sidebar-toggler").on("click", function() {
+    $("#docs-sidebar-toggler").on("click", ()=>{
       if ($("#docs-sidebar").hasClass("sidebar-visible")) {
         $("#docs-sidebar")
           .removeClass("sidebar-visible")
@@ -390,8 +410,7 @@ $(document).ready(function() {
     e.preventDefault();
     $(this).ekkoLightbox();
   });
-  $('[data-toggle="tooltip"]').tooltip();
-  $(document).ready(function() {
-    $("ol.bold-numbers li").wrapInner("<span class='normal' />")
-  })
+  $('*[data-toggle="tooltip"]').tooltip();
+  $("ol.bold-numbers li").wrapInner("<span class='normal' />")
+
 });

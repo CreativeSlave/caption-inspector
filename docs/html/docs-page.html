@@ -73,18 +73,17 @@
                         </svg>
                     </div>
                     <a class="navbar-brand" href="../index.html">
-                        <span class="logo-text">Caption <span
-                                class="text-alt">Inspector</span></span>
+                        <span class="logo-text">CAPTION <span class="alt-text">INSPECTOR</span></span>
                     </a>
                 </div>
             </div>
             <!--//docs-logo-wrapper-->
             <div class="docs-top-utilities d-flex justify-content-end align-items-center">
                 <div class="top-search-box d-none d-lg-flex" hidden>
-                    <form action="#" class="search-form" onsubmit="return false" hidden>
+                    <form action="#" class="search-form" onsubmit="return false" >
                         <input class="form-control search-input" id="searchField1" name="search"
                                placeholder="Search the docs..." type="text">
-                        <button class="btn search-btn" onclick="searchDocs.search(this.form)" type="submit"
+                        <button class="btn search-btn" onclick="searchDocs.search('searchField1')" type="submit"
                                 value="Search"><i
                                 class="fas fa-search"></i>
                         </button>
@@ -151,7 +150,7 @@
                         </blockquote>
                         <p class="section-intro">
                             Caption Inspector was created to be an open and accessible toolset used to decode and validate
-                            <span data-placement="top" data-toggle="tooltip" class="tooltip" title="Closed captions were created for deaf or hard of hearing individuals to assist in comprehension. They can also be used as a tool by those learning to  read, learning to speak a non-native language, or in an environment where the audio is difficult to hear or is intentionally muted.">Closed Captions (CC)</span>
+                            <span data-placement="top" data-toggle="tooltip" class="tooltip-tag" title="Closed captions were created for deaf or hard of hearing individuals to assist in comprehension. They can also be used as a tool by those learning to  read, learning to speak a non-native language, or in an environment where the audio is difficult to hear or is intentionally muted.">Closed Captions (CC)</span>
                             content from a video assets or caption file.
                         </p>
                         <p>Closed Captioning Quality is required in many industries, companies, and countries for the sake of accessibility. Caption Inspector provides the necessary service of validating Closed Captioned content, and is especially useful when sharing content between Content Providers and Distributors, who then in turn, make the content available to Consumers.
@@ -327,19 +326,16 @@
                     </ol>
                     <br>
                     <h3 class="section-heading bump bump bump" id="section-3-2">How is it Used</h3>
-                    <p><b>Caption Inspector is a Command Line Interface (CLI)</b> tool that takes a video or caption file as input, extracts the embedded data,
-                                                                                  and outputs this to a text file, formatted in either a standard
-                        <span data-placement="top" data-toggle="tooltip" class="tooltip" title="MCC: MacCaption Closed Captions">`.mcc`</span>, or
-                        <span data-placement="top" data-toggle="tooltip" class="tooltip" title="SCC: Scenarist Closed Captions">`.scc`</span> file format. Yet, this tool is not simply an extractor of embedded data, but a primary purpose of this tool is to validate the embedded transcript for errors.
+                    <p><b>Caption Inspector is a Command Line Interface (CLI)</b> tool that takes a video or caption file as input, extracts the embedded data, and outputs this to a text file, formatted in either a standard
+                        <span data-placement="top" data-toggle="tooltip" class="tooltip-tag" title="MCC: MacCaption Closed Captions">`.mcc`</span>, or
+                        <span data-placement="top" data-toggle="tooltip" class="tooltip-tag" title="SCC: Scenarist Closed Captions">`.scc`</span> file format. Yet, this tool is not simply an extractor of embedded data, but a primary purpose of this tool is to validate the embedded transcript for errors.
                     </p>
                     <p><b>Processing content will create several files</b>, which includes:
-                    <ul>
-                        <li><b>Content Descriptor Document (CDD) File.</b> A single CDD `.ccd file` shows each frame's binary caption data as hex values
-                                                                           followed by decoded characters and control-codes (much like how the output of the
-                                                                           Linux `xxd` command shows the hex values followed by ascii).
+                    <ul class="mt-0">
+                        <li><b>Content Descriptor Document (CDD) File.</b> A single CDD `.ccd file` shows each frame's binary caption data as hex values followed by decoded characters and control-codes (much like how the output of the
+                             Linux `xxd` command shows the hex values followed by ascii).
                         </li>
-                        <li>And, Individual <b>.608 and .708 files</b> are also generated for each channel/service, separating the binary caption data into
-                            frame-indexed, service-specific, human-readable text and control-codes for analysis.
+                        <li>And, Individual <b>.608 and .708 files</b> are also generated for each channel/service, separating the binary caption data into frame-indexed, service-specific, human-readable text and control-codes for analysis.
                         </li>
                     </ul>
                     </p>
@@ -351,22 +347,20 @@
                     <ul class="none">
                         <li>
                             <p>
-                                <b>FFMPEG*</b><br> Caption Inspector requires FFMPEG to be installed on your machine. Please download the appropriate version of
-                                                   FFMPEG from the website and install it on your machine. <span class="details">Caption Inspector is known to run with FFMPEG Version 4.0.2.</span>.<br><br>
+                                <b>FFMPEG*</b><br> Caption Inspector requires FFMPEG to be installed on your machine. Please download the appropriate version of FFMPEG from the website and install it on your machine. <span class="details">Caption Inspector is known to run with FFMPEG Version 4.0.2.</span>.<br><br>
                                 <a href="https://ffmpeg.org/download.html" target="_blank" class="btn btn-primary"><span class="bold">Get &nbsp;</span>  <span class="lite">https://ffmpeg.org/download.html</span></a>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <b>Drop Frame</b><br> While not required, Caption Inspector leverages a tool called MediaInfo to determine whether or not an
-                                                      asset is, or is not, Drop Frame. You can download the command line version of MediaInfo. <span
+                                <b>Drop Frame</b><br> While not required, Caption Inspector leverages a tool called MediaInfo to determine whether or not an asset is, or is not, Drop Frame. You can download the command line version of MediaInfo. <span
                                     class="details">Caption Inspector is known to run with MediaInfo Version 18.12.</span><br><br>
                                 <a href="https://mediaarea.net/en/MediaInfo/Download" target="_blank" class="btn btn-primary"><span class="bold">Get &nbsp;</span>  <span class="lite">https://mediaarea.net/en/MediaInfo/Download</span></a>
                             </p>
                         </li>
                     </ul>
                     <h3 class="bump" id="section-4-1">Developer Overview</h3>
-                    <p>The Caption Inspector project builds a <span class="tag">C library</span>, <span class="tag">C executable</span>, and Docker image that can be used to extract and decode Closed-Captions
+                    <p>The Caption Inspector project builds a <span class="language">C library</span>, <span class="language">C executable</span>, and Docker image that can be used to extract and decode Closed-Captions
                        from various Video or Caption File Formats. Caption Inspector Supports <span class="tag">CEA-608</span> and <span class="tag">CEA-708</span> in <span class="tag">MPEG-2</span> and <span class="tag">MPEG-4</span> (.mpg, .ts, and .mp4
                        containers), <span class="tag">MCC</span> (MacCaption Closed Captions), and <span class="tag">SCC</span> (Scenarist Closed Captions) files.
                     </p>
@@ -374,34 +368,39 @@
                     <section class="docs-test">
                         <div class="info-cards">
                             <h3>Two Basic Types</h3>
-                            <p>Caption Inspector decodes the Closed Captioning Data into two basic types of output files. The first type has the Closed Captioning Data <span class="tag">demultiplexed</span> into output files for each service/channel with closed caption tags and text in the file.
+                            <p class="justified text-justify">Caption Inspector decodes the Closed Captioning Data into two basic types of output files,
+                                <a class="tag bold" href="./docs-page.html#section-12-0">Demultiplexed</a>, and
+                                <a class="tag bold" href="./docs-page.html#section-12-0">Multiplexed</a>. </p><br>
+                            <p class="  text-justify"><a class="tag" href="./docs-page.html#section-12-0">Demultiplexed</a> based content has the Closed Captioning Data  referenced from other, externally linked, one file for each service/channel with closed caption tags and text in it. <a class="tag" href="./docs-page.html#section-12-0">Multiplexed</a> contains all of the Closed Captioning Data embedded within the content, and is decoded in place.
                             </p>
                                 <!-- Info Card  -->
-                                <div class="info-card" hidden>
+                                <div class="info-card">
                                     <div class="front">
-                                        <h3>DATA</h3>
+                                        <h3>Demultiplexed</h3>
                                     </div>
                                     <div class="back">
-                                        <h2>Type</h2>
-                                        <p>Make your data available to consume by publishing your data to one of our fully managed platforms.</p>
-                                        <div class="btn-set">
-                                            <a class="btn btn-learn-more" href="#">Learn More</a>
-                                            <a class="btn btn-get-started" href="#">Get Started</a>
-                                        </div>
+                                        <h2>Demultiplexed</h2>
+                                        <p>Contains externally linked files for each closed caption service or channel.</p>
+                                        <img class="img-fluid  mt-0" src="./assets/icons/files/ico-blank-2.png" style="max-width:100px">
+<!--                                        <div class="btn-set">-->
+<!--                                            <a class="btn btn-learn-more" href="#">Learn More</a>-->
+<!--                                            <a class="btn btn-get-started" href="#">Get Started</a>-->
+<!--                                        </div>-->
                                     </div>
                                 </div>
                                 <!-- Info Card  -->
-                                <div class="info-card" hidden>
+                                <div class="info-card">
                                     <div class="front">
-                                        <h3>Type</h3>
+                                        <h3>Multiplexed</h3>
                                     </div>
                                     <div class="back">
-                                        <h2>Type</h2>
-                                        <p>Consume and store your data to our data lake, a remote database, or to another location.</p>
-                                        <div class="btn-set">
-                                            <a class="btn btn-learn-more" href="#">Learn More</a>
-                                            <a class="btn btn-get-started" href="#">Get Started</a>
-                                        </div>
+                                        <h2>Multiplexed</h2>
+                                        <p>Closed Captioning Data decoded in place - embedded. </p>
+                                        <img class="img-fluid mt-0" src="./assets/content-images/ico-generate.png" style="max-width:120px">
+<!--                                        <div class="btn-set">-->
+<!--                                            <a class="btn btn-learn-more" href="#">Learn More</a>-->
+<!--                                            <a class="btn btn-get-started" href="#">Get Started</a>-->
+<!--                                        </div>-->
                                     </div>
                                 </div>
     
@@ -409,12 +408,6 @@
                         </div>
                     </section>
                     
-                    
-                    <p>The second type has all of the Closed Captioning Data decoded in place, still multiplexed together. Beyond the current use case of
-                       decoding and examining the Closed Captioning, the Caption Inspector Codebase can be leveraged as a reference implementation of the Closed
-                       Captioning Specifications which would allow a developer to not have to understand the specifics of the specs just to access, manipulate,
-                       and modify the encoded Closed Captioning.
-                    </p>
                 </section>
                 <section class="docs-section" id="section-5-0">
                     <h2 class="section-heading" data-title="Installation">Installation & Start Up</h2>
@@ -464,11 +457,13 @@
                         </div>
                     </div>
                     <h3 id="section-5-3" class="x-large" data-title="Using the CLI">Using the CLI</h3>
-                    <pre class="copy"><code class="language-bash"><span class="bold">make caption-inspector</span>
+                    <pre  class="language-bash"><code class="language-bash">
+<span class="bold">make caption-inspector</span>
 ./<span class="text-blue">caption-inspector</span> <span class="text-orange">-h</span>
 ./<span class="text-blue">caption-inspector</span> <span class="text-orange">-o</span> <span class="text-grey">.test/media/BigBuckBunny_256x144-24fps.ts</span>
 ./<span class="text-blue">caption-inspector</span> <span class="text-orange">-o</span> <span class="text-grey">.test/media/Plan9fromOuterSpace.scc <span class="text-orange">-f</span> 2400</span>
 ./<span class="text-blue">caption-inspector</span> <span class="text-orange">-o</span> <span class="text-grey">.test/media/NightOfTheLivingDead.mcc</span>
+
 </code></pre>
                     <table class="table table-striped software">
                         <thead>
@@ -488,7 +483,7 @@
                         <tr>
                             <td>-o</td>
                             <td>
-                                <p><span class="bold">Running against</span> the caption file <code>Plan9fromOuterSpace.scc</code> demonstrates decoding an <span data-placement="top" data-toggle="tooltip" class="tooltip" title="SCC: Scenarist Closed Captions">SCC</span> file and CEA-608 Captions, as well as converting the contents of the <span data-placement="top" data-toggle="tooltip" class="tooltip" title="SCC: Scenarist Closed Captions">SCC</span> file into an MCC file.</p>
+                                <p><span class="bold">Running against</span> the caption file <code>Plan9fromOuterSpace.scc</code> demonstrates decoding an <span data-placement="top" data-toggle="tooltip" class="tooltip-tag" title="SCC: Scenarist Closed Captions">SCC</span> file and CEA-608 Captions, as well as converting the contents of the <span data-placement="top" data-toggle="tooltip" class="tooltip-tag" title="SCC: Scenarist Closed Captions">SCC</span> file into an MCC file.</p>
                                 <p><span class="bold">Running against</span> the caption file <code>NightOfTheLivingDead.mcc</code> demonstrates decoding an MCC file, CEA-608 Captions, and CEA-708 Captions.</p>
             
                             </td>
@@ -500,7 +495,8 @@
                        dependencies, but comes at the expense of a slightly more complicated command line execution.
                     </p>
                     <h3 id="section-5-5" class="x-large" data-title="Docker &amp; the CLI">Using the CLI with Docker</h3>
-                    <pre class="copy"><code class="language-bash"><span class="bold">make docker</span>
+                    <pre class="language-bash"><code class="language-bash">
+<span class="bold">make docker</span>
 docker run -t caption-inspector -h
 docker run -tv $(pwd):/files caption-inspector -o /files /files/test/media/BigBuckBunny_256x144-24fps.ts
 docker run -tv $(pwd):/files caption-inspector -o /files /files/test/media/Plan9fromOuterSpace.scc -f 2400
@@ -531,8 +527,10 @@ docker run -tv $(pwd):/files caption-inspector -o /files /files/test/media/Night
                        . Xunit Viewer is the application that takes the Xunit XML and converts it into a beautified HTML format. Once you have Xunit Viewer
                        installed, or if you ignore it, you just need to build and run the regression tests from the test directory.
                     </p>
-                    <pre class="copy"><code>cd test
+                    <pre class="language-bash"><code>
+cd test
 <span class="bold">make</span> test
+
 </code></pre>
                     <p>The tests are a mix of C and Python, depending on which made more sense for the specific test. The build system will aggregate all of the
                        results from the tests in both languages.
@@ -548,7 +546,7 @@ docker run -tv $(pwd):/files caption-inspector -o /files /files/test/media/Night
                     <p>The Caption Inspector code that makes this possible, and the library it generates, can likely be reused for other high level languages such as Java/JNI, Golang/Cgo, etc.
                     </p>
                     <!--<h3>Basic Usage</h3>-->
-                    <!--<pre class="copy"><code>-->
+                    <!--<pre class="language-bash"><code>-->
                     <!--git clone git@github.comcast.com:vx/CaptionConverter.git-->
                     <!--make-->
                     <!--./caption-converter -h-->
@@ -563,7 +561,7 @@ docker run -tv $(pwd):/files caption-inspector -o /files /files/test/media/Night
                     <!--by the job queue server script (`run.sh`), first build the cttp executable Docker image from the-->
                     <!--root directory, then build the cc-image docker image from the python and tag it for-->
                     <!--deployment:</p>-->
-                    <!--<pre class="copy"><code>-->
+                    <!--<pre class="language-bash"><code>-->
                     <!--make docker-->
                     <!--cd python-->
                     <!--make test build itest tag-->
@@ -755,7 +753,7 @@ docker run -tv $(pwd):/files caption-inspector -o /files /files/test/media/Night
                         <li><span class="tag">Drop Frame Number</span></li>
                         <li><span class="tag">Millisecond</span></li>
                     </ul>
-<pre class="copy"><code>
+<pre class="language-bash"><code>
 <b>Drop Frame Number Timestamps format</b>
 `&lt;Hour&gt;:&lt;Minute&gt;:&lt;Second&gt;;&lt;Frame&gt;`
 
@@ -776,7 +774,7 @@ docker run -tv $(pwd):/files caption-inspector -o /files /files/test/media/Night
                     <h3 id="section-8-3" data-title="Reading Output">The Basis for Reading Output - Hex Data</h3>
                     The Hex Data representation of the Closed Captioning Construct is intended to be the most direct representation of the `cc_data()`
                     structure, which is comprised of the following fields:
-<pre class="copy"><code>
+<pre  class="language-bash"><code>
 01. { cc_valid  }{cc_type}:{cc_data_1}{cc_data_2}
 02. { F | P | X  }{  S  | D }:
 </code></pre>
@@ -784,7 +782,7 @@ docker run -tv $(pwd):/files caption-inspector -o /files /files/test/media/Night
                     </p>
                     <p>The `cc_type` field determines the type of data that will be in `cc_data_1` and `cc_data_2`. This field can have the following values:
                     </p>
-<pre class="copy"><code>
+<pre  class="language-bash"><code>
 '1': Line 21 Field 1 Data,
 '2': Line 21 Field 2 Data,
     'S': DTVCC Packet Data Start,
@@ -850,15 +848,15 @@ docker run -tv $(pwd):/files caption-inspector -o /files /files/test/media/Night
                     <p>The packet structure is made up of a Packet Start followed by a number of Data Packets. Receiving another Packet Start ends the current
                        packet and tells the closed captioning service to process all of the data that was in the previous packet structure.
                     </p>
-                    <div class="callout-block callout-block-warning">
-                        <div class="content">
-                            <span class="callout-icon-holder mr-1"><i class="fas fa-bullhorn"></i></span>
-                            <h4 class="callout-title">Warning</h4>
-                            <p>THIS IS ONLY AN EXAMPLE. Its important to read warning messages when you see them, with the exception of this one because testing overlooked this warning.
-                               We figure its important that everyone has something to do...
-                            </p>
-                        </div>
-                    </div>
+<!--                    <div class="callout-block callout-block-warning">-->
+<!--                        <div class="content">-->
+<!--                            <span class="callout-icon-holder mr-1"><i class="fas fa-bullhorn"></i></span>-->
+<!--                            <h4 class="callout-title">Warning</h4>-->
+<!--                            <p>THIS IS ONLY AN EXAMPLE. Its important to read warning messages when you see them, with the exception of this one because testing overlooked this warning.-->
+<!--                               We figure its important that everyone has something to do...-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <p>To make the start of the packet structure stick out in the decoded data, it has an arrow on the Packet Start: `<-`.</p>
                     <div class="graphic-caption">[ 708 Packet Start ] ( ccd708PacketStart.png )</div>
                     <img class="img-fluid graphic-diagram" data-toggle="lightbox"
@@ -1083,7 +1081,7 @@ docker run -tv $(pwd):/files caption-inspector -o /files /files/test/media/Night
                     </table>
     
                     <h3 id="section-11-2" data-title="608/708 Codes">CEA-608/CEA-708 Codes</h3>
-                    <p>The Hex Data specifies the hexadecimal equivalents for Channels 1 through 4 found in the <span data-placement="top" data-toggle="tooltip" class="tooltip" title="SCC: Scenarist Closed Captions">SCC</span> file, using the standard ISO 8859-0
+                    <p>The Hex Data specifies the hexadecimal equivalents for Channels 1 through 4 found in the <span data-placement="top" data-toggle="tooltip" class="tooltip-tag" title="SCC: Scenarist Closed Captions">SCC</span> file, using the standard ISO 8859-0
                        Character Set. Decoded Data refers to Channel Number (1 - 4).
                     </p>
                     <table class="table table-striped software">
@@ -1739,6 +1737,7 @@ docker run -tv $(pwd):/files caption-inspector -o /files /files/test/media/Night
 <script src="./assets/js/highlight.min.js"></script>
 <script src="./assets/js/highlight-custom.js"></script>
 <script src="./assets/js/jquery.scrollTo.min.js"></script>
+<script src="./assets/plugins/prism/min/prism-min.js"></script>
 <script src="./assets/js/ekko-lightbox.min.js"></script>
 <script src="./assets/js/docs.js"></script>
 </body>

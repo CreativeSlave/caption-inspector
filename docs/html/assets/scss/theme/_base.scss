@@ -32,12 +32,12 @@ h1, h2, h3, h4, h5, h6 {
 	color: $theme-text-color-primary;
 	font-weight: 600;
 }
-code {
-	background: $theme-bg-lighter !important;
-	color: $theme-text-color-primary !important;
-	padding: 0.25rem 0.375rem !important;
-	@include border-radius(8px);
-}
+//code {
+//	background: $theme-bg-lighter !important;
+//	color: $theme-text-color-primary !important;
+//	padding: 0.25rem 0.375rem !important;
+//	@include border-radius(8px);
+//}
 .table-bordered th, .table-bordered td {
 	//border-color: $theme-divider;
 }
