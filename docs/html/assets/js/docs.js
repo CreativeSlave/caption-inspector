@@ -1,3 +1,11 @@
+("use strict");
+const PAGE_URL = (() => {
+  let url = window.location.href.toString();
+  if (url.includes("#")) {
+    url = url.substring(0, url.indexOf("#"));
+  }
+  return url;
+})();
 $(window).on("load resize", function() {
   var w = $(window).width();
   if (w >= 1230) {
@@ -13,14 +21,7 @@ $(window).on("load resize", function() {
 const LEVEL = { ROOT: 0, PARENT: 1, CHILD: 2, NUB: 3 };
 const LEVEL_LABELS = ["ROOT", "PARENT", "CHILD", "NUB"];
 
-("use strict");
-const PAGE_URL = (() => {
-  let url = window.location.href.toString();
-  if (url.includes("#")) {
-    url = url.substring(0, url.indexOf("#"));
-  }
-  return url;
-})();
+
 const sectionHeaders =
   '<li class="nav-item section-title" onclick="location.hash=\'{{SECTION}}\'">' +
   '<a class="nav-link scrollto" href="./docs-page.html#{{SECTION}}">' +
