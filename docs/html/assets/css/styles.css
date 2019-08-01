@@ -1,6 +1,6 @@
 @media screen and (min-width: 320px) {
   html, body, .docs-article p {
-    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(14px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
     line-height: calc(25px + (30 - 25) * ((100vw - 300px) / (1600 - 300)));
   }
 }
@@ -31,7 +31,7 @@ $color-blue
 }
 
 .text-grey {
-  color: #445 !important;
+  color: #444455 !important;
   letter-spacing: 0.6px;
 }
 
@@ -60,11 +60,11 @@ span.block {
   display: inline-block;
   color: #4360FF !important;
   cursor: pointer !important;
-  text-decoration: underline dotted #ffa700 !important;
+  text-decoration: underline solid #ffa700 !important;
 }
 
 body {
-  font-weight: 500;
+  font-weight: 400;
 }
 @media print {
   body .container {
@@ -230,25 +230,25 @@ body article.docs-article section.docs-section h2.section-heading {
   margin-bottom: 1rem !important;
 }
 body article.docs-article section.docs-section > h3 {
-  font-weight: 100 !important;
-  font-size: calc(18px + (48 - 18) * ((100vw - 300px) / (1600 - 300))) !important;
-  margin-top: 70px !important;
+  font-weight: 200 !important;
+  font-size: calc(18px + (48 - 19) * ((100vw - 300px) / (1600 - 300))) !important;
+  margin-top: 50px !important;
   margin-bottom: 1.4rem !important;
   color: #ffa700;
 }
 body article.docs-article section.docs-section > h3.title {
-  font-size: calc(20px + (48 - 20) * ((100vw - 300px) / (1600 - 300))) !important;
+  font-size: calc(20px + (46 - 20) * ((100vw - 300px) / (1600 - 300))) !important;
 }
-body article.docs-article section.docs-section > h4, body article.docs-article section.docs-section h4 {
+body article.docs-article section.docs-section > h4, body article.docs-article section.docs-section h4, body article.docs-article section.docs-section .h4 {
   font-weight: 900;
-  font-size: 1.8rem;
-  margin-top: 10px;
+  font-size: 1.85rem;
+  margin-top: 15px;
   margin-bottom: 2.75rem;
   color: #4360FF;
 }
-body article.docs-article section.docs-section h5 {
+body article.docs-article section.docs-section >, body article.docs-article section.docs-section h5, body article.docs-article section.docs-section h5, body article.docs-article section.docs-section .h5 {
   font-weight: 700 !important;
-  font-size: 1.4rem !important;
+  font-size: 1.5rem !important;
   margin-top: 45px !important;
   margin-bottom: 1.2rem;
 }
@@ -650,16 +650,29 @@ ol.guidelines > li > span.description {
   display: block !important;
 }
 
+.docs-nav .nav-link:before {
+  background-color: #BBC2FF;
+  content: " ";
+  display: inline-block;
+  height: inherit;
+  left: -30px;
+  margin-top: -0.5rem;
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  border-radius: 1rem;
+}
+
 div.outline-indicator {
   display: block !important;
   /*float      : right !important;*/
   /*clear      : right !important;*/
-  color: #eef1f3 !important;
+  color: #c7cdd2 !important;
   max-width: 60px !important;
   text-align: right !important;
   position: absolute !important;
   top: 5px !important;
-  right: 0 !important;
+  right: 5px !important;
 }
 
 span.outline-indicator {
@@ -679,8 +692,12 @@ span.outline-indicator {
 .docs-nav a.nav-link {
   display: block;
   position: relative !important;
-  padding: 0px 40px 15px 15px;
+  padding: 0px 240px 15px 10px;
   color: #868f96;
+}
+.docs-nav a.nav-link > span {
+  display: inline-block;
+  padding-top: 5px;
 }
 .docs-nav .nav-item {
   position: relative !important;
@@ -692,6 +709,8 @@ span.outline-indicator {
   font-weight: 900 !important;
   position: relative !important;
   color: #2a2c2d;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 .docs-nav .nav-item.section-title a.nav-link .outline-indicator {
   display: block !important;
@@ -699,15 +718,15 @@ span.outline-indicator {
   max-width: 60px !important;
   text-align: right !important;
   position: absolute !important;
-  top: 5px !important;
+  top: 10px !important;
   right: 0 !important;
 }
-.docs-nav .nav-item.section-title a.nav-link:hover {
+.docs-nav .nav-item.section-title a.nav-link:hover, .docs-nav .nav-item.section-title a.nav-link:focus, .docs-nav .nav-item.section-title a.nav-link:active {
   display: block;
   font-weight: 900 !important;
   color: #4360FF;
 }
-.docs-nav .nav-item.section-title a.nav-link:hover .outline-indicator {
+.docs-nav .nav-item.section-title a.nav-link:hover .outline-indicator, .docs-nav .nav-item.section-title a.nav-link:focus .outline-indicator, .docs-nav .nav-item.section-title a.nav-link:active .outline-indicator {
   color: #4360FF !important;
 }
 .docs-nav .nav-item.section-title:hover {
@@ -1068,8 +1087,8 @@ img.caption-inspector-logo {
   background: linear-gradient(0deg, #354c82 0%, #5579d2 33%, #96a1ff 100%);
   color: #FFFFFF;
   overflow: hidden;
-  width: 350px;
-  height: 350px;
+  width: 350px !important;
+  height: 350px !important;
   position: absolute;
   z-index: 1;
   padding-top: 100px;
@@ -1082,8 +1101,8 @@ img.caption-inspector-logo {
 .info-card .back {
   text-align: center;
   padding: 20px;
-  width: 350px;
-  height: 350px;
+  width: 350px !important;
+  height: 350px !important;
   -webkit-transform: rotateY(-180deg);
   overflow: scroll;
   box-shadow: 0px 5px 15px rgba(100, 100, 100, 0.35);

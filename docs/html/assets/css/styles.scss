@@ -1,8 +1,10 @@
 @import "colors";
 
+$side-bar-width : 350px;
+
 @media screen and (min-width : 320px) {
     html, body, .docs-article p {
-        font-size   : calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+        font-size   : calc(14px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
         line-height : calc(25px + (30 - 25) * ((100vw - 300px) / (1600 - 300)));
     }
 }
@@ -44,7 +46,7 @@ $color-blue
     color : $color-xfinity-pumkin !important;
 }
 .text-grey {
-    color          : #445 !important;
+    color          : #444455 !important;
     letter-spacing : 0.6px;
 }
 img.icon_profile {
@@ -70,10 +72,10 @@ span.block {
     display         : inline-block;
     color           : $color-blue !important;
     cursor          : pointer !important;
-    text-decoration : underline dotted $color-xfinity-pumkin !important;
+    text-decoration : underline solid $color-xfinity-pumkin !important;
 }
 body {
-    font-weight : 500;
+    font-weight : 400;
     .container {
         @media print {
             margin : 50px 0 !important;
@@ -148,7 +150,7 @@ body {
             @media print {
                 display : none !important;
             }
-            width      : 350px !important;
+            width      : $side-bar-width !important;
             margin-top : 0px;
             padding    : 0px;
             @include trans(0.3s);
@@ -263,7 +265,6 @@ body {
                 }
             }
             section.docs-section {
-
                 @media print {
                     width : 100% !important;
                 }
@@ -274,25 +275,25 @@ body {
                     margin-bottom : 1rem !important;
                 }
                 > h3 {
-                    font-weight   : 100 !important;
-                    font-size     : calc(18px + (48 - 18) * ((100vw - 300px) / (1600 - 300))) !important;
-                    margin-top    : 70px !important;
+                    font-weight   : 200 !important;
+                    font-size     : calc(18px + (48 - 19) * ((100vw - 300px) / (1600 - 300))) !important;
+                    margin-top    : 50px !important;
                     margin-bottom : 1.4rem !important;
                     color         : $color-xfinity-pumkin;
                     &.title {
-                        font-size : calc(20px + (48 - 20) * ((100vw - 300px) / (1600 - 300))) !important;
+                        font-size : calc(20px + (46 - 20) * ((100vw - 300px) / (1600 - 300))) !important;
                     }
                 }
-                > h4, h4 {
+                > h4, h4, .h4 {
                     font-weight   : 900;
-                    font-size     : 1.8rem;
-                    margin-top    : 10px;
+                    font-size     : 1.85rem;
+                    margin-top    : 15px;
                     margin-bottom : 2.75rem;
                     color         : $color-blue;
                 }
-                h5 {
+                >, h5, h5, .h5 {
                     font-weight   : 700 !important;
-                    font-size     : 1.4rem !important;
+                    font-size     : 1.5rem !important;
                     margin-top    : 45px !important;
                     margin-bottom : 1.2rem;
                 }
@@ -444,13 +445,11 @@ body {
                     &:hover {
                         @include blue-shadow(80px, 0.45);
                         p.reference {
-
                             background-color : $color-cool-grey-2;
                         }
                     }
 
                 }
-
                 .panel-group {
                     margin-top    : 65px;
                     border-radius : 4px !important;
@@ -621,125 +620,6 @@ b, .bold {
     }
 }
 
-
-//.site-logo > .logo-container {
-//    -webkit-box-shadow : none !important;
-//    -moz-box-shadow    : none !important;
-//    box-shadow         : none !important;
-//    background         : transparent !important;
-//    padding-bottom     : 0 !important;
-//    border             : none !important;
-//    @include square(80px);
-//    display            : inline-block !important;
-//    svg#CaptionInspectorCircle {
-//        @include square(58px);
-//        margin : 0 0 0 0;
-//        g.caption-inspector-logo {
-//            @include trans(1s);
-//            circle.circle-background {
-//                @include blue-shadow(80px, 0.75);
-//                fill         : rgba(255, 255, 255, 0.75);
-//                stroke       : rgba(255, 255, 255, 0.95);
-//                stroke-width : 2%;
-//                @include trans(0.5s);
-//            }
-//            path.eye-glass {
-//                fill               : rgba(255, 255, 255, 0.55);
-//                opacity            : 0.20;
-//                -webkit-transition : all 2s ease-out;
-//                -moz-transition    : all 2s ease-out;
-//                -o-transition      : all 2s ease-out;
-//                transition         : all 2s ease-out;
-//            }
-//            path.inspector-face {
-//                fill         : $color-cool-grey-12;
-//                fill         : rgb(60, 60, 70);
-//                stroke       : rgba(100, 100, 140, 0.2);
-//                stroke-width : 2%;
-//                @include trans(0.5s);
-//            }
-//            &:hover {
-//                circle.circle-background {
-//                    @include blue-shadow(80px, 0.45);
-//                    fill         : #FFFFFD !important;
-//                    stroke       : lighten($color-xfinity-pumkin, 4%);
-//                    stroke-width : 3%;
-//                }
-//                path.inspector-face {
-//                    fill         : $color-xfinity-pumkin !important;
-//
-//                    stroke       : darken($color-xfinity-pumkin, 2%);
-//                    stroke-width : 1%;
-//                }
-//                path.eye-glass {
-//                    opacity : 0.85;
-//                    size    : 50%;
-//                }
-//            }
-//        }
-//    }
-//    //@media (max-width : 768px) {
-//    //    display : none !important;
-//    //}
-//}
-//.logo-container {
-//    //border-radius:200px;
-//    display        : none !important;
-//    @include blue-shadow(30px, 0.45);
-//    background     : rgb(53, 76, 130);
-//    padding-bottom : 30px;
-//    border-bottom  : 2px solid rgb(85, 121, 210) !important;
-//    background     : linear-gradient(180deg, rgba(53, 76, 130, 1) 0%, rgba(85, 121, 210, 1) 33%, rgba(150, 161, 255, 1) 100%);
-//    > svg#CaptionInspectorCircle {
-//        margin : 40px 40px 0px 40px;
-//        g.caption-inspector-logo {
-//            @include trans(1s);
-//            circle.circle-background {
-//                @include blue-shadow(80px, 0.75);
-//                fill         : rgba(255, 255, 255, 0.75);
-//                stroke       : rgba(255, 255, 255, 0.95);
-//                stroke-width : 2%;
-//                @include trans(0.5s);
-//            }
-//            path.eye-glass {
-//                fill               : rgba(255, 255, 255, 0.55);
-//                opacity            : 0.20;
-//                -webkit-transition : all 2s ease-out;
-//                -moz-transition    : all 2s ease-out;
-//                -o-transition      : all 2s ease-out;
-//                transition         : all 2s ease-out;
-//            }
-//            path.inspector-face {
-//                fill         : $color-cool-grey-12;
-//                fill         : rgb(60, 60, 70);
-//                stroke       : rgba(100, 100, 140, 0.2);
-//                stroke-width : 2%;
-//                @include trans(0.5s);
-//            }
-//            &:hover {
-//                circle.circle-background {
-//                    @include blue-shadow(80px, 0.45);
-//                    fill         : #FFFFFD !important;
-//                    stroke       : lighten($color-xfinity-pumkin, 4%);
-//                    stroke-width : 3%;
-//                }
-//                path.inspector-face {
-//                    fill         : $color-xfinity-pumkin !important;
-//
-//                    stroke       : darken($color-xfinity-pumkin, 2%);
-//                    stroke-width : 1%;
-//                }
-//                path.eye-glass {
-//                    opacity : 0.85;
-//                    size    : 50%;
-//                }
-//            }
-//        }
-//    }
-//    @media (max-width : 768px) {
-//        display : none !important;
-//    }
-//}
 .bump {
     margin-top : 25px;
 }
@@ -767,17 +647,31 @@ ol.guidelines > li {
         display : block !important;
     }
 }
+.nav-link.scrollto {
 
+}
+.docs-nav .nav-link:before {
+    background-color : #BBC2FF;
+    content          : " ";
+    display          : inline-block;
+    height           : inherit;
+    left             : -30px;
+    margin-top       : -0.5rem;
+    position         : absolute;
+    width            : 3px;
+    height           : 100%;
+    border-radius    : 1rem;
+}
 div.outline-indicator {
     display    : block !important;
     /*float      : right !important;*/
     /*clear      : right !important;*/
-    color      : $color-cool-grey-3 !important;
+    color      : $color-cool-grey-7 !important;
     max-width  : 60px !important;
     text-align : right !important;
     position   : absolute !important;
     top        : 5px !important;
-    right      : 0 !important;
+    right      : 5px !important;
 }
 span.outline-indicator {
     display     : inline-block;
@@ -786,6 +680,7 @@ span.outline-indicator {
     float       : right;
     clear-after : both;
 }
+
 .docs-nav {
     &.navbar {
         width : 400px;
@@ -794,12 +689,16 @@ span.outline-indicator {
     a.nav-link {
         display  : block;
         position : relative !important;
-        padding  : 0px 40px 15px 15px;
+        padding  : 0px 240px 15px 10px;
         color    : $color-cool-grey-10;
+        > span {
+            display : inline-block;
+            padding-top:5px;
+        }
     }
     .nav-item {
         position : relative !important;
-        &:focus, &:active {
+        &:focus,&:active {
             color : $color-blue !important;
         }
         &.section-title {
@@ -807,16 +706,18 @@ span.outline-indicator {
                 font-weight : 900 !important;
                 position    : relative !important;
                 color       : $color-cool-grey-13;
+                padding-top : 3px;
+                padding-bottom : 3px;
                 .outline-indicator {
                     display    : block !important;
                     color      : $color-cool-grey-8 !important;
                     max-width  : 60px !important;
                     text-align : right !important;
                     position   : absolute !important;
-                    top        : 5px !important;
+                    top        : 10px !important;
                     right      : 0 !important;
                 }
-                &:hover {
+                &:hover,&:focus,&:active {
                     display     : block;
                     font-weight : 900 !important;
                     //color       : $color-cool-grey-12 !important;
@@ -1173,8 +1074,8 @@ img {
         background  : linear-gradient(0deg, rgba(53, 76, 130, 1) 0%, rgba(85, 121, 210, 1) 33%, rgba(150, 161, 255, 1) 100%);
         color       : #FFFFFF;
         overflow    : hidden;
-        width       : 350px;
-        height      : 350px;
+        width       : $side-bar-width !important;
+        height      : $side-bar-width !important;
         position    : absolute;
         z-index     : 1;
 
@@ -1190,8 +1091,8 @@ img {
         text-align        : center;
         padding           : 20px;
         //padding-top       : 0px;
-        width             : 350px;
-        height            : 350px;
+        width             : $side-bar-width !important;
+        height            : $side-bar-width !important;
         -webkit-transform : rotateY(-180deg);
         overflow          : scroll;
         box-shadow        : 0px 5px 15px rgba(100, 100, 100, 0.35);

@@ -7,13 +7,13 @@
  *
  * **The missing CSS**:
  * ```css
-    html, body {margin: 0;}
-    body:after {
+ html, body {margin: 0;}
+ body:after {
       position: fixed;
       width: 100%;
     }
  
-    #cloud {
+ #cloud {
       overflow: hidden;
       width: 1px; height: 1px;
       transform: translate(-100%, -100%);
@@ -46,31 +46,15 @@ class CloudGenerator {
      * @param element
      * @param baseColor
      */
-    constructor(elementId, filterId, baseColor = "#5579D2"){
-        this.clouds = document.querySelector(elementId);
-        this.filterId = filterId;
-        this.baseColor = baseColor;
-        CloudGenerator.insertDOMFilter(this.filterId);
-        CloudGenerator.debounce(()=>{
-            this.generate();
-        }, 2500);
+    constructor(elementId, filterId, baseColor = "#5579D2") {
+        console.log(this.constructor.name, elementId, filterId, baseColor);
+        this.container  = document.querySelector(`#${elementId}`);
+        this.clouds     = document.querySelector(`#clouds`);
+        this.filterId   = filterId;
+        this.baseColor  = baseColor;
+        this.generate();
     }
-    /**
-     * ### nsert DOM Filter
-     * Insert a one time DOM Filter for the CSS and SVG
-     */
-    static insertDOMFilter(filterId){
-        if(!document.querySelector(`#${filterId}`)){
-            document.body.appendChild(`
-                <svg width="0">
-                  <filter id="${filterId}">
-                    <feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="10" />
-                    <feDisplacementMap in="SourceGraphic" scale="240" />
-                  </filter>
-                </svg>`);
-        }
-    }
-    segment() {
+    static segment() {
         return arguments[CloudGenerator.randomize(1, arguments.length) - 1];
     }
     static randomize(from, to) {
@@ -81,31 +65,35 @@ class CloudGenerator {
         for (let i = 0; i < max; ++i) {
             /** DO NOT REFORMAT! */
             ret.push(`
-      ${ CloudGenerator.randomize(1, 100) }vw ${ CloudGenerator.randomize(1, 100) }vh ${ CloudGenerator.randomize(20, 40) }vmin ${ CloudGenerator.randomize(1, 20) }vmin
-      ${ this.segment('#11cbd7', '#c6f1e7', '#f0fff3', baseColor) }
+      ${CloudGenerator.randomize(1, 100)}vw ${CloudGenerator.randomize(1, 100)}vh ${CloudGenerator.randomize(20, 40)}vmin ${CloudGenerator.randomize(1, 20)}vmin
+      ${CloudGenerator.segment('#11cbd7', '#c6f1e7', '#f0fff3', baseColor)}
     `)
         }
         return ret.join(',');
     }
     static debounce(func, wait, immediate) {
-        var timeout;
-        return function() {
-            var context = this, args = arguments;
+        let timeout;
+        return function () {
+            let context = this, args = arguments;
             clearTimeout(timeout);
-            timeout = setTimeout(function() {
+            timeout = setTimeout(() => {
                 timeout = null;
-                if (!immediate) func.apply(context, args);
+                if (!immediate) {
+                    func.apply(context, args);
+                }
             }, wait);
-            if (immediate && !timeout) func.apply(context, args);
+            if (immediate && !timeout) {
+                func.apply(context, args);
+            }
         };
     }
-    generate(){
-        if(this.clouds){
-            
-            this.clouds.style.boxShadow =
-                CloudGenerator.boxShadows(60, this.baseColor);
+    generate() {
+        console.log("Generate Clouds now!");
+        if (this.clouds) {
+            this.clouds.style.boxShadow = CloudGenerator.boxShadows(60, this.baseColor);
+            console.info("this.clouds.style.boxShadow: ", this.clouds.style.boxShadow);
         } else {
-            console.warn("Could not find document.querySelector('element [this.clouds] ')")
+            console.warn(`Could not find document.querySelector('element [this.clouds] ')`, this.clouds)
         }
     }
 }

@@ -16,25 +16,25 @@
         <ellipse id="path-19" cx="49.5870968" cy="49.2857143" rx="48.5376344" ry="48.6285714"></ellipse>
         <ellipse id="path-21" cx="48.5870968" cy="49.2857143" rx="48.5376344" ry="48.6285714"></ellipse>
     </defs>
-    <g id="clock-art" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+    <g id="clock-art" stroke="none" stroke-width="1" fill="transparent" fill-rule="evenodd" sketch:type="MSPage">
         <g id="WINNER" sketch:type="MSArtboardGroup" transform="translate(-991.000000, -3460.000000)">
             <g id="Group-+-super-icons" sketch:type="MSLayerGroup" transform="translate(194.000000, 3302.000000)">
                 <g id="super-icons" transform="translate(65.000000, 158.000000)">
                     <g id="clock" transform="translate(732.000000, 0.000000)">
-                        <rect id="Rectangle-21" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="193" height="193"></rect>
+                        <rect id="Rectangle-21" fill="transparent" sketch:type="MSShapeGroup" x="0" y="0" width="193" height="193"></rect>
                         <ellipse id="XMLID_126_" stroke="#1485E0" stroke-width="2" sketch:type="MSShapeGroup" cx="90.3935484" cy="28.9428571" rx="26.2365591" ry="26.2857143"></ellipse>
-                        <rect id="XMLID_125_" stroke="#1485E0" stroke-width="2" fill="#FFFFFF" sketch:type="MSShapeGroup" x="85.4086022" y="53.2571429" width="10.4946237" height="15.7714286"></rect>
+                        <rect id="XMLID_125_" stroke="#1485E0" stroke-width="2" fill="rgba(255,255,255,0.95)" sketch:type="MSShapeGroup" x="85.4086022" y="53.2571429" width="10.4946237" height="15.7714286"></rect>
                         <ellipse id="XMLID_124_" stroke="#1485E0" stroke-width="4.1818" fill="#C4E1F7" sketch:type="MSShapeGroup" cx="90.3935484" cy="124.885714" rx="60.344086" ry="60.4571429"></ellipse>
                         <g id="XMLID_679_" transform="translate(40.806452, 75.600000)">
                             <g id="XMLID_123_-Clipped">
-                                <mask id="mask-2" sketch:name="XMLID_51_" fill="white">
+                                <mask id="mask-2" sketch:name="XMLID_51_" fill="rgba(255,255,255,0.95)">
                                     <use xlink:href="#path-1"></use>
                                 </mask>
                                 <g id="XMLID_51_"></g>
                                 <ellipse id="XMLID_123_" stroke="#1485E0" stroke-width="2" fill="#FFFFFF" sketch:type="MSShapeGroup" mask="url(#mask-2)" cx="49.5870968" cy="49.2857143" rx="47.2258065" ry="47.3142857"></ellipse>
                             </g>
                             <g id="XMLID_122_-Clipped">
-                                <mask id="mask-4" sketch:name="XMLID_51_" fill="white">
+                                <mask id="mask-4" sketch:name="XMLID_51_" fill="rgba(255,255,255,0.85)">
                                     <use xlink:href="#path-3"></use>
                                 </mask>
                                 <g id="XMLID_51_"></g>

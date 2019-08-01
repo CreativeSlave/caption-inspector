@@ -9765,7 +9765,7 @@ a.theme-link:hover {
   border-color: #a2abff;
 }
 .form-control:focus {
-  box-shadow: 0 5px 15px 0 rgba(67, 96, 255, 0.15);
+  box-shadow: 0 5px 15px 0 rgba(67, 96, 255, 0.25);
   outline: none;
 }
 
@@ -9793,205 +9793,199 @@ a.theme-link:hover {
 }
 
 .theme-bg-shapes-right {
+  z-index: 0 !important;
+  padding: 20px !important;
   position: absolute;
   height: 100%;
-  width: 100%;
-  right: 0;
+  width: 100vw;
+  right: 0px;
   top: 0;
   overflow: hidden;
-  -webkit-transition: all 0.8s ease-out;
-  -moz-transition: all 0.8s ease-out;
-  -o-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out;
 }
 .theme-bg-shapes-right:before {
-  content: "";
-  width: 400px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.1);
-  position: absolute;
-  right: -60px;
-  top: 0;
+  transition: all 9s ease-in-out;
+  -webkit-transition: all 9s ease-in-out;
+  -moz-transition: all 9s ease-in-out;
+  -o-transition: all 9s ease-in-out;
   border-radius: 8px;
-  -moz-transform: skew(25deg, -10deg);
-  -o-transform: skew(25deg, -10deg);
-  -ms-transform: skew(25deg, -10deg);
-  -webkit-transform: skew(25deg, -10deg);
-  transform: skew(25deg, -10deg);
-  moz-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transition: all 0.7s ease-out;
-  -moz-transition: all 0.7s ease-out;
-  -o-transition: all 0.7s ease-out;
-  transition: all 0.7s ease-out;
+  -moz-transform: skew(-15deg, -15deg);
+  -o-transform: skew(-15deg, -15deg);
+  -ms-transform: skew(-15deg, -15deg);
+  -webkit-transform: skew(-15deg, -15deg);
+  transform: skew(-15deg, -15deg);
+  moz-transform-origin: top right;
+  -o-transform-origin: top right;
+  -ms-transform-origin: top right;
+  -webkit-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  -moz-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  z-index: 0 !important;
+  padding: 40px !important;
+  color: rgba(250, 250, 255, 0.1);
+  background: rgba(0, 0, 25, 0.25);
+  font-size: 0.85em;
+  width: 400px;
+  height: auto;
+  content: "{DF1:Popup-Cntrd:R0-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'On the leftmost portion of the document is the timestamp. Each Closed Caption Data (CCD) packet has a timestamp, whichcorresponds with the frame of the asset containing the CCD packet. For r eadability sake, the timestamp is only printed out when specific Global Control Codes are encountered.'";
+  position: absolute;
+  right: 400px;
+  top: -200px;
 }
 .theme-bg-shapes-right:after {
-  content: "";
-  width: 150px;
-  height: 600px;
-  background: rgba(255, 255, 255, 0.15);
+  transition: all 7s ease-in-out;
+  -webkit-transition: all 7s ease-in-out;
+  -moz-transition: all 7s ease-in-out;
+  -o-transition: all 7s ease-in-out;
+  border-radius: 8px;
+  -moz-transform: skew(-15deg, -15deg);
+  -o-transform: skew(-15deg, -15deg);
+  -ms-transform: skew(-15deg, -15deg);
+  -webkit-transform: skew(-15deg, -15deg);
+  transform: skew(-15deg, -15deg);
+  moz-transform-origin: top right;
+  -o-transform-origin: top right;
+  -ms-transform-origin: top right;
+  -webkit-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  -moz-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  z-index: 0 !important;
+  padding: 40px !important;
   position: absolute;
-  right: 0px;
-  top: 30px;
-  border-radius: 6px;
-  -moz-transform: skew(25deg, 10deg);
-  -o-transform: skew(25deg, 10deg);
-  -ms-transform: skew(25deg, 10deg);
-  -webkit-transform: skew(25deg, 10deg);
-  transform: skew(25deg, 10deg);
-  moz-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-.theme-bg-shapes-right:hover:before {
-  content: "";
-  width: 300px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.1);
-  position: absolute;
-  right: 60px;
-  top: 40px;
-  border-radius: 40px;
-  -moz-transform: skew(95deg, 110deg);
-  -o-transform: skew(95deg, 110deg);
-  -ms-transform: skew(95deg, 110deg);
-  -webkit-transform: skew(95deg, 110deg);
-  transform: skew(95deg, 110deg);
-  moz-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
-}
-.theme-bg-shapes-right:hover:after {
-  content: "";
-  width: 150px;
-  height: 600px;
-  background: rgba(255, 255, 255, 0.15);
-  position: absolute;
-  right: 30px;
-  top: 100px;
-  border-radius: 600px;
-  -moz-transform: skew(2deg, 70deg);
-  -o-transform: skew(2deg, 70deg);
-  -ms-transform: skew(2deg, 70deg);
-  -webkit-transform: skew(2deg, 70deg);
-  transform: skew(2deg, 70deg);
-  moz-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
+  color: rgba(250, 250, 255, 0.1);
+  background: rgba(0, 0, 25, 0.25);
+  font-size: 1em;
+  width: 400px;
+  height: auto;
+  content: "{DF0:Popup-Cntrd:R0-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'The Closed Caption Descriptor File contains a decoded binary representation'";
+  right: 250px;
+  top: -230px;
 }
 
 .theme-bg-shapes-left {
+  z-index: 0 !important;
+  padding: 40px !important;
   position: absolute;
   height: 100%;
-  width: 100%;
-  right: 0;
-  top: 0;
+  width: 100vw;
+  left: 0px;
+  top: 0px;
   overflow: hidden;
-  -webkit-transition: all 0.6s ease-out;
-  -moz-transition: all 0.6s ease-out;
-  -o-transition: all 0.6s ease-out;
-  transition: all 0.6s ease-out;
 }
 .theme-bg-shapes-left:before {
-  -webkit-transition: all 0.8s ease-out;
-  -moz-transition: all 0.8s ease-out;
-  -o-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out;
-  content: "";
-  width: 300px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.1);
-  position: absolute;
-  left: -90px;
-  top: 0;
+  transition: all 8s ease-in-out;
+  -webkit-transition: all 8s ease-in-out;
+  -moz-transition: all 8s ease-in-out;
+  -o-transition: all 8s ease-in-out;
   border-radius: 8px;
-  -moz-transform: skew(25deg, -12deg);
-  -o-transform: skew(25deg, -12deg);
-  -ms-transform: skew(25deg, -12deg);
-  -webkit-transform: skew(25deg, -12deg);
-  transform: skew(25deg, -12deg);
+  -moz-transform: skew(15deg, 15deg);
+  -o-transform: skew(15deg, 15deg);
+  -ms-transform: skew(15deg, 15deg);
+  -webkit-transform: skew(15deg, 15deg);
+  transform: skew(15deg, 15deg);
   moz-transform-origin: top left;
   -o-transform-origin: top left;
   -ms-transform-origin: top left;
   -webkit-transform-origin: top left;
   transform-origin: top left;
+  -webkit-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  -moz-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  z-index: 0 !important;
+  padding: 20px !important;
+  position: absolute;
+  color: rgba(250, 250, 255, 0.1);
+  background: rgba(0, 0, 25, 0.25);
+  font-size: 0.85em;
+  width: 400px;
+  height: auto;
+  content: "{DF3:Popup-Cntrd:R5-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'Tab Control codes are used for positioning the captions. Specifically, they tell how far to move to the right from the current position. Used in conjunction with the Column Number from the Address PAC, it allows the captions to be placed anywhere in the text field. '";
+  left: 100px;
+  top: -50;
 }
 .theme-bg-shapes-left:after {
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  content: "";
-  width: 150px;
-  height: 600px;
-  background: rgba(255, 255, 255, 0.15);
-  position: absolute;
-  left: 0px;
-  top: 30px;
+  transition: all 6s ease-in-out;
+  -webkit-transition: all 6s ease-in-out;
+  -moz-transition: all 6s ease-in-out;
+  -o-transition: all 6s ease-in-out;
   border-radius: 8px;
-  -moz-transform: skew(-25deg, 10deg);
-  -o-transform: skew(-25deg, 10deg);
-  -ms-transform: skew(-25deg, 10deg);
-  -webkit-transform: skew(-25deg, 10deg);
-  transform: skew(-25deg, 10deg);
+  -moz-transform: skew(15deg, 15deg);
+  -o-transform: skew(15deg, 15deg);
+  -ms-transform: skew(15deg, 15deg);
+  -webkit-transform: skew(15deg, 15deg);
+  transform: skew(15deg, 15deg);
   moz-transform-origin: top left;
   -o-transform-origin: top left;
   -ms-transform-origin: top left;
   -webkit-transform-origin: top left;
   transform-origin: top left;
-}
-.theme-bg-shapes-left:hover:before {
-  content: "";
-  width: 300px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  -moz-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  z-index: 0 !important;
+  padding: 20px !important;
   position: absolute;
-  left: -90px;
-  top: 50px;
-  border-radius: 20px;
-  -moz-transform: skew(65deg, -12deg);
-  -o-transform: skew(65deg, -12deg);
-  -ms-transform: skew(65deg, -12deg);
-  -webkit-transform: skew(65deg, -12deg);
-  transform: skew(65deg, -12deg);
-  moz-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
+  color: rgba(250, 250, 255, 0.1);
+  background: rgba(0, 0, 25, 0.25);
+  font-size: 0.95em;
+  width: 400px;
+  height: auto;
+  content: "{DF0:Popup-Cntrd:R0-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'The Global Control are represented inline by wrapping the mnemonic code with braces.'";
+  left: 200px;
+  top: -60px;
 }
-.theme-bg-shapes-left:hover:after {
-  content: "";
-  width: 150px;
-  height: 600px;
-  background: rgba(255, 255, 255, 0.15);
-  position: absolute;
-  left: 100px;
-  top: 80px;
-  border-radius: 50px;
-  -moz-transform: skew(-25deg, 60deg);
-  -o-transform: skew(-25deg, 60deg);
-  -ms-transform: skew(-25deg, 60deg);
-  -webkit-transform: skew(-25deg, 60deg);
-  transform: skew(-25deg, 60deg);
-  moz-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
+
+.page-header.theme-bg-dark {
+  background-color: #BBC2FF;
+  height: 440px !important;
+  background: linear-gradient(0deg, #BBC2FF 2%, #515ADA 100%);
+  position: relative;
+  transition: background 2s ease-in-out;
+  -webkit-transition: background 2s ease-in-out;
+  -moz-transition: background 2s ease-in-out;
+  -o-transition: background 2s ease-in-out;
+}
+.page-header.theme-bg-dark:hover .theme-bg-shapes-right:before {
+  right: 0px;
+  top: 40px;
+  -webkit-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.8) !important;
+  -moz-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.8) !important;
+  box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.8) !important;
+  -moz-transform: skew(-5deg, -10deg);
+  -o-transform: skew(-5deg, -10deg);
+  -ms-transform: skew(-5deg, -10deg);
+  -webkit-transform: skew(-5deg, -10deg);
+  transform: skew(-5deg, -10deg);
+}
+.page-header.theme-bg-dark:hover .theme-bg-shapes-right:after {
+  right: -250px;
+  top: 100px;
+  -moz-transform: skew(-5deg, -10deg);
+  -o-transform: skew(-5deg, -10deg);
+  -ms-transform: skew(-5deg, -10deg);
+  -webkit-transform: skew(-5deg, -10deg);
+  transform: skew(-5deg, -10deg);
+}
+.page-header.theme-bg-dark:hover .theme-bg-shapes-left:before {
+  left: -100px;
+  top: -60px;
+  -moz-transform: skew(-15deg, -15deg);
+  -o-transform: skew(-15deg, -15deg);
+  -ms-transform: skew(-15deg, -15deg);
+  -webkit-transform: skew(-15deg, -15deg);
+  transform: skew(-15deg, -15deg);
+}
+.page-header.theme-bg-dark:hover .theme-bg-shapes-left:after {
+  left: -300px;
+  top: 200px;
+  -moz-transform: skew(-15deg, -15deg);
+  -o-transform: skew(-15deg, -15deg);
+  -ms-transform: skew(-15deg, -15deg);
+  -webkit-transform: skew(-15deg, -15deg);
+  transform: skew(-15deg, -15deg);
 }
 
 /*********** Theme Utilities **********/
@@ -10023,14 +10017,17 @@ a.theme-link:hover {
 }
 
 /* Page headers */
-.page-header.theme-bg-dark .page-heading {
+.page-header.theme-bg-dark .hero-container .page-heading, .page-header.theme-bg-light .hero-container .page-heading {
   color: #fff;
+  font-weight: 900;
 }
-.page-header.theme-bg-dark .page-intro {
+.page-header.theme-bg-dark .hero-container .page-intro, .page-header.theme-bg-light .hero-container .page-intro {
+  font-size: 1.855rem;
   color: #fff;
-  -webkit-opacity: 0.8;
-  -moz-opacity: 0.8;
-  opacity: 0.8;
+  font-weight: 200;
+  -webkit-opacity: 0.65;
+  -moz-opacity: 0.65;
+  opacity: 0.65;
 }
 
 .social-list li {
@@ -10065,14 +10062,6 @@ a.theme-link:hover {
 }
 
 /* Page related */
-.page-heading {
-  font-size: 2.5rem;
-}
-
-.page-intro {
-  font-size: 1.125rem;
-}
-
 .main-search-box {
   max-width: 600px;
 }
@@ -10096,55 +10085,114 @@ a.theme-link:hover {
   transition: background-color 0.6s;
 }
 
-.docs-overview .card {
-  border-width: 3px;
-  border-radius: 12px !important;
-  border-color: #e7e9ed;
+.index.docs-overview .card {
+  color: #4360FF !important;
+  alignment: center;
+  text-align: center;
+  border-width: 6px;
+  border-radius: 15px !important;
+  border-color: #bbc2ff;
   position: relative;
-  height: 100%;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  -webkit-box-shadow: 0px 5px 10px rgba(67, 96, 255, 0.1) !important;
-  -moz-box-shadow: 0px 5px 10px rgba(67, 96, 255, 0.1) !important;
-  box-shadow: 0px 5px 10px rgba(67, 96, 255, 0.1) !important;
+  height: 350px;
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  box-shadow: 0px 0px 30px rgba(67, 96, 255, 0.65) !important;
+  -webkit-box-shadow: 0px 0px 30px rgba(67, 96, 255, 0.65) !important;
+  -moz-box-shadow: 0px 0px 30px rgba(67, 96, 255, 0.65) !important;
 }
-.docs-overview .card svg {
+.index.docs-overview .card > h3.title {
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  position: absolute;
+  text-transform: uppercase !important;
+  color: inherit !important;
+  text-align: inherit !important;
+  alignment: center;
+  font-size: 2rem;
+  top: 15%;
+  width: 100%;
+  height: 25%;
+}
+.index.docs-overview .card img > svg, .index.docs-overview .card svg {
   background-color: transparent !important;
 }
-.docs-overview .card:hover {
-  -webkit-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.6) !important;
-  -moz-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.6) !important;
-  box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.6) !important;
-}
-.docs-overview .card-icon-holder {
-  width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
-  margin-top: 2px !important;
+.index.docs-overview .card .icon {
+  opacity: 0.75 !important;
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  height: 35%;
   padding-top: 1rem;
-  display: inline-block;
+  display: block;
 }
-.docs-overview .card-title-text {
-  display: inline-block;
-  position: relative;
-  top: -0.3rem;
+.index.docs-overview .card .icon > img, .index.docs-overview .card .icon svg {
+  display: block;
+  margin: auto auto;
+  width: 50% !important;
 }
-.docs-overview .card-link-mask {
+.index.docs-overview .card .icon svg {
+  background-color: transparent !important;
+}
+.index.docs-overview .card .description {
+  transition: opacity 0.6s ease-in-out;
+  -webkit-transition: opacity 0.6s ease-in-out;
+  -moz-transition: opacity 0.6s ease-in-out;
+  -o-transition: opacity 0.6s ease-in-out;
+  position: absolute;
+  opacity: 0;
+  color: inherit !important;
+  text-align: inherit !important;
+  alignment: center;
+  font-size: 1rem;
+  top: 50%;
+  bottom: 0px;
+  width: 100%;
+  height: 35%;
+  padding: 0px 15%;
+}
+.index.docs-overview .card .link-mask {
+  border-radius: 15px !important;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0) !important;
+  -webkit-box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0) !important;
+  -moz-box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0) !important;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
 }
+.index.docs-overview .card:hover {
+  color: white !important;
+  background: #96a1ff;
+  border-color: #4360FF;
+  box-shadow: inset 0px 0px 80px #4360ff !important;
+  -webkit-box-shadow: inset 0px 0px 80px #4360ff !important;
+  -moz-box-shadow: inset 0px 0px 80px #4360ff !important;
+}
+.index.docs-overview .card:hover h3.title {
+  color: white !important;
+  top: 25%;
+}
+.index.docs-overview .card:hover .description {
+  transition-delay: 0.5s !important;
+  opacity: 0.99;
+}
+.index.docs-overview .card:hover .icon {
+  transition-delay: 0.5s !important;
+  opacity: 0 !important;
+}
 
 /* Docs page */
 header.header {
-  -webkit-transition: all 1s ease-out;
-  -moz-transition: all 1s ease-out;
-  -o-transition: all 1s ease-out;
-  transition: all 1s ease-out;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
   padding-top: 15px;
   height: 100px !important;
 }
@@ -10173,14 +10221,14 @@ header.header > div.desktop-search-results > h3, header.header > div.desktop-sea
   color: white;
 }
 header.header.fixed-top {
-  -webkit-box-shadow: 0px 10px 20px rgba(67, 96, 255, 0.25) !important;
-  -moz-box-shadow: 0px 10px 20px rgba(67, 96, 255, 0.25) !important;
-  box-shadow: 0px 10px 20px rgba(67, 96, 255, 0.25) !important;
+  box-shadow: 0px 0px 20px rgba(67, 96, 255, 0.25) !important;
+  -webkit-box-shadow: 0px 0px 20px rgba(67, 96, 255, 0.25) !important;
+  -moz-box-shadow: 0px 0px 20px rgba(67, 96, 255, 0.25) !important;
 }
 header.header.fixed-top:hover {
-  -webkit-box-shadow: 0px 25px 50px rgba(67, 96, 255, 0.65) !important;
-  -moz-box-shadow: 0px 25px 50px rgba(67, 96, 255, 0.65) !important;
-  box-shadow: 0px 25px 50px rgba(67, 96, 255, 0.65) !important;
+  box-shadow: 0px 0px 50px rgba(67, 96, 255, 0.65) !important;
+  -webkit-box-shadow: 0px 0px 50px rgba(67, 96, 255, 0.65) !important;
+  -moz-box-shadow: 0px 0px 50px rgba(67, 96, 255, 0.65) !important;
 }
 header.header.fixed-top:hover > div.desktop-search-results {
   color: white !important;
@@ -10191,12 +10239,25 @@ header.header.fixed-top:hover > div.desktop-search-results {
   margin-left: 20px;
   text-transform: uppercase !important;
   letter-spacing: 2px !important;
-  color: #444448 !important;
+  color: #444454 !important;
   font-weight: 900;
 }
 .navbar-brand .alt-text {
-  color: #99999a !important;
+  color: rgba(140, 140, 140, 0.5) !important;
   font-weight: 400 !important;
+}
+
+#hero {
+  position: relative;
+}
+
+#clouds {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  opacity: 0.2;
 }
 
 .site-logo > .logo-container {
@@ -10207,11 +10268,10 @@ header.header.fixed-top:hover > div.desktop-search-results {
   box-shadow: none !important;
   background: transparent !important;
   padding: 15px 0 0 1px !important;
-  border: 1px solid #eeeeee !important;
-  width: 80px !important;
-  height: 80px !important;
-  max-width: 80px !important;
-  max-height: 80px !important;
+  width: 78px !important;
+  height: 78px !important;
+  max-width: 78px !important;
+  max-height: 78px !important;
   display: inline-block !important;
 }
 .site-logo > .logo-container svg#CaptionInspectorCircle {
@@ -10222,52 +10282,52 @@ header.header.fixed-top:hover > div.desktop-search-results {
   margin: -15px 0 0 0;
 }
 .site-logo > .logo-container svg#CaptionInspectorCircle g.caption-inspector-logo {
+  transition: all 1s ease-out;
   -webkit-transition: all 1s ease-out;
   -moz-transition: all 1s ease-out;
   -o-transition: all 1s ease-out;
-  transition: all 1s ease-out;
 }
 .site-logo > .logo-container svg#CaptionInspectorCircle g.caption-inspector-logo circle.circle-background {
-  -webkit-box-shadow: 0px 40px 80px rgba(67, 96, 255, 0.75) !important;
-  -moz-box-shadow: 0px 40px 80px rgba(67, 96, 255, 0.75) !important;
-  box-shadow: 0px 40px 80px rgba(67, 96, 255, 0.75) !important;
-  fill: rgba(235, 235, 239, 0.79);
-  stroke: rgba(255, 255, 255, 0.95);
-  stroke-width: 1.6%;
-  -webkit-transition: all 0.7s ease-out;
-  -moz-transition: all 0.7s ease-out;
-  -o-transition: all 0.7s ease-out;
-  transition: all 0.7s ease-out;
+  box-shadow: 0px 0px 80px rgba(67, 96, 255, 0.75) !important;
+  -webkit-box-shadow: 0px 0px 80px rgba(67, 96, 255, 0.75) !important;
+  -moz-box-shadow: 0px 0px 80px rgba(67, 96, 255, 0.75) !important;
+  fill: rgba(145, 145, 155, 0.1);
+  stroke: rgba(67, 96, 255, 0.5);
+  stroke-width: 4%;
+  transition: all 0.7s ease-in-out;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
 }
 .site-logo > .logo-container svg#CaptionInspectorCircle g.caption-inspector-logo path.eye-glass {
   fill: rgba(255, 255, 255, 0.55);
   opacity: 0.2;
-  -webkit-transition: all 1.5s ease-out;
-  -moz-transition: all 1.5s ease-out;
-  -o-transition: all 1.5s ease-out;
-  transition: all 1.5s ease-out;
+  transition: all 1.5s ease-in-out;
+  -webkit-transition: all 1.5s ease-in-out;
+  -moz-transition: all 1.5s ease-in-out;
+  -o-transition: all 1.5s ease-in-out;
 }
 .site-logo > .logo-container svg#CaptionInspectorCircle g.caption-inspector-logo path.inspector-face {
-  fill: #64646e;
-  stroke: rgba(100, 100, 140, 0.2);
-  stroke-width: 1%;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+  fill: rgba(140, 140, 140, 0.8);
+  stroke: rgba(72, 103, 177, 0.2);
+  stroke-width: 0.5%;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
 .site-logo > .logo-container svg#CaptionInspectorCircle g.caption-inspector-logo:hover circle.circle-background {
-  -webkit-box-shadow: 0px 40px 80px rgba(67, 96, 255, 0.45) !important;
-  -moz-box-shadow: 0px 40px 80px rgba(67, 96, 255, 0.45) !important;
-  box-shadow: 0px 40px 80px rgba(67, 96, 255, 0.45) !important;
+  box-shadow: 0px 0px 80px rgba(67, 96, 255, 0.45) !important;
+  -webkit-box-shadow: 0px 0px 80px rgba(67, 96, 255, 0.45) !important;
+  -moz-box-shadow: 0px 0px 80px rgba(67, 96, 255, 0.45) !important;
   fill: #FFFFFD !important;
-  stroke: #ffae14;
-  stroke-width: 1%;
+  stroke: #ffca66;
+  stroke-width: 5%;
 }
 .site-logo > .logo-container svg#CaptionInspectorCircle g.caption-inspector-logo:hover path.inspector-face {
   fill: #ffa700 !important;
-  stroke: #f09d00;
-  stroke-width: 1%;
+  stroke: #ffd380;
+  stroke-width: 0.6%;
 }
 .site-logo > .logo-container svg#CaptionInspectorCircle g.caption-inspector-logo:hover path.eye-glass {
   opacity: 0.85;
@@ -10364,27 +10424,28 @@ header.header.fixed-top:hover > div.desktop-search-results {
   display: none;
   width: 350px;
   position: fixed;
-  z-index: 10;
-  top: 69px;
-  height: calc(100% - 69px);
-  background: #FFF;
+  z-index: 50;
+  top: 85px;
+  height: calc(100% - 85px);
+  background: #F9F9FF;
   overflow-y: auto;
   /* Forefox scrollbar */
-  scrollbar-color: rgba(0, 0, 0, 0.2) #f5f5f5;
+  scrollbar-color: rgba(67, 96, 255, 0.1);
   scrollbar-width: thin;
   /* Chrome webkit scrollbar */
-  transition: transform 0.35s ease-in-out;
-  -webkit-box-shadow: 1px 0 5px 0 rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 1px 0 5px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 1px 0 5px 0 rgba(0, 0, 0, 0.1);
+  border-right: 2px solid rgba(255, 255, 255, 0.75) !important;
+  transition: transform 0.5s ease-in-out;
+  -webkit-box-shadow: 3px 0 35px 0 rgba(67, 96, 255, 0.15);
+  -moz-box-shadow: 3px 0 35px 0 rgba(67, 96, 255, 0.15);
+  box-shadow: 3px 0 35px 0 rgba(67, 96, 255, 0.15);
 }
 .docs-sidebar::-webkit-scrollbar {
-  width: 6px;
-  background-color: rgba(67, 96, 255, 0.2);
+  width: 8px;
+  background-color: rgba(67, 96, 255, 0.1);
 }
 .docs-sidebar::-webkit-scrollbar-thumb {
-  background-color: #4360ff;
-  border-radius: 0.5rem;
+  background-color: rgba(67, 96, 255, 0.2);
+  border-radius: 2rem;
 }
 @media (prefers-reduced-motion: reduce) {
   .docs-sidebar {
@@ -10436,10 +10497,12 @@ header.header.fixed-top:hover > div.desktop-search-results {
   display: none;
 }
 .docs-nav .nav-link {
+  border-radius: 10px;
   display: inline-block;
   position: relative;
-  padding: 0.5rem 1rem;
+  padding: 6px 10px;
   color: #5d6778;
+  margin: 2px 0;
 }
 .docs-nav .nav-link .theme-icon-holder {
   font-size: 0.875rem;
@@ -10452,25 +10515,67 @@ header.header.fixed-top:hover > div.desktop-search-results {
   background-color: #4360FF;
 }
 .docs-nav .nav-link.active .theme-icon-holder {
-  color: #FFF;
+  color: #FFFFFF;
   background: #4360FF;
 }
 .docs-nav .nav-link:before {
-  background-color: #bbc2ff;
+  transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  background-color: rgba(67, 96, 255, 0.1);
   content: " ";
   display: inline-block;
   height: inherit;
-  left: 0;
-  margin-top: -0.5rem;
+  left: -30px;
+  margin-top: 0rem;
   position: absolute;
-  width: 3px;
+  width: 6px;
   height: 100%;
-  border-radius: 1rem;
+  border-radius: 60px;
+}
+.docs-nav .nav-link:after {
+  transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  background-color: rgba(67, 96, 255, 0.1);
+  content: " ";
+  display: inline-block;
+  opacity: 0;
+  height: 30px;
+  width: 30px;
+  left: -45px;
+  position: absolute;
+  border-radius: 100px;
+}
+.docs-nav .nav-link:hover {
+  background-color: rgba(67, 96, 255, 0.05);
+  color: #4360FF;
+}
+.docs-nav .nav-link:hover:before {
+  background-color: rgba(67, 96, 255, 0.5);
+  width: 15px;
+  height: 15px;
+  margin-top: 10px;
+  left: -35px;
+}
+.docs-nav .nav-link:hover:after {
+  background-color: rgba(67, 96, 255, 0.5);
+  opacity: 1;
+  height: 5px;
+  margin-top: 15px;
+  width: 8px;
+  left: -15px;
+}
+.docs-nav .nav-link:hover .outline-indicator {
+  color: #4360FF !important;
 }
 
 .docs-content {
-  margin-left: 300px;
-  padding-bottom: 500px;
+  margin-left: 350px;
+  padding-top: 100px;
+  padding-bottom: 200px;
 }
 
 .docs-article {
@@ -10552,7 +10657,7 @@ p.legal {
   margin-bottom: 1rem;
 }
 .callout-block code {
-  background: #FFF;
+  background: #FFFFFF;
 }
 .callout-block .callout-title {
   font-size: 1rem;
@@ -10597,13 +10702,31 @@ p.legal {
 .callout-block.callout-block-danger a {
   color: #ff0e0e;
 }
+.callout-block.small {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 
+.cta-section {
+  background: linear-gradient(0deg, #515ADA 0%, #BBC2FF 100%) !important;
+}
 .cta-section .container {
   position: relative;
   z-index: 10;
 }
 .cta-section .section-intro {
   font-size: 1.125rem;
+}
+
+body.index-page .page-header, body.index-page .page-header.theme-bg-dark {
+  background: linear-gradient(0deg, #BBC2FF 2%, #515ADA 100%);
+}
+body.index-page .page-content {
+  background: #BBC2FF;
+}
+body.index-page .cta-section {
+  background: linear-gradient(0deg, #515ADA 2%, #BBC2FF 100%) !important;
 }
 
 /* We occasionally use media queries that go in the other direction */
@@ -10783,7 +10906,7 @@ pre[class*=language-]:after {
 
 .token.regex,
 .token.important {
-  color: #E90;
+  color: #EE9900;
 }
 
 .language-css .token.string,
@@ -10923,7 +11046,7 @@ pre[class*=language-].line-numbers > code {
   width: 3em;
   /* works for line-numbers below 1000 lines */
   letter-spacing: -1px;
-  border-right: 1px solid #999;
+  border-right: 1px solid #999999;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -10938,7 +11061,7 @@ pre[class*=language-].line-numbers > code {
 
 .line-numbers-rows > span:before {
   content: counter(linenumber);
-  color: #999;
+  color: #999999;
   display: block;
   padding-right: 0.8em;
   text-align: right;
@@ -11003,7 +11126,7 @@ div.code-toolbar > .toolbar button {
 div.code-toolbar > .toolbar a,
 div.code-toolbar > .toolbar button,
 div.code-toolbar > .toolbar span {
-  color: #BBB;
+  color: #BBBBBB;
   font-size: 0.8em;
   padding: 0 0.5em;
   background: #F5F2F0;
@@ -11023,7 +11146,7 @@ div.code-toolbar > .toolbar span:focus {
 }
 
 .command-line-prompt {
-  border-right: 1px solid #999;
+  border-right: 1px solid #999999;
   display: block;
   float: left;
   font-size: 100%;
@@ -11037,7 +11160,7 @@ div.code-toolbar > .toolbar span:focus {
 }
 
 .command-line-prompt > span:before {
-  color: #999;
+  color: #999999;
   content: " ";
   display: block;
   padding-right: 0.8em;
@@ -11152,7 +11275,7 @@ a.theme-link:hover {
   border-color: #a2abff;
 }
 .form-control:focus {
-  box-shadow: 0 5px 15px 0 rgba(67, 96, 255, 0.15);
+  box-shadow: 0 5px 15px 0 rgba(67, 96, 255, 0.25);
   outline: none;
 }
 
@@ -11180,205 +11303,199 @@ a.theme-link:hover {
 }
 
 .theme-bg-shapes-right {
+  z-index: 0 !important;
+  padding: 20px !important;
   position: absolute;
   height: 100%;
-  width: 100%;
-  right: 0;
+  width: 100vw;
+  right: 0px;
   top: 0;
   overflow: hidden;
-  -webkit-transition: all 0.8s ease-out;
-  -moz-transition: all 0.8s ease-out;
-  -o-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out;
 }
 .theme-bg-shapes-right:before {
-  content: "";
-  width: 400px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.1);
-  position: absolute;
-  right: -60px;
-  top: 0;
+  transition: all 9s ease-in-out;
+  -webkit-transition: all 9s ease-in-out;
+  -moz-transition: all 9s ease-in-out;
+  -o-transition: all 9s ease-in-out;
   border-radius: 8px;
-  -moz-transform: skew(25deg, -10deg);
-  -o-transform: skew(25deg, -10deg);
-  -ms-transform: skew(25deg, -10deg);
-  -webkit-transform: skew(25deg, -10deg);
-  transform: skew(25deg, -10deg);
-  moz-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transition: all 0.7s ease-out;
-  -moz-transition: all 0.7s ease-out;
-  -o-transition: all 0.7s ease-out;
-  transition: all 0.7s ease-out;
+  -moz-transform: skew(-15deg, -15deg);
+  -o-transform: skew(-15deg, -15deg);
+  -ms-transform: skew(-15deg, -15deg);
+  -webkit-transform: skew(-15deg, -15deg);
+  transform: skew(-15deg, -15deg);
+  moz-transform-origin: top right;
+  -o-transform-origin: top right;
+  -ms-transform-origin: top right;
+  -webkit-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  -moz-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  z-index: 0 !important;
+  padding: 40px !important;
+  color: rgba(250, 250, 255, 0.1);
+  background: rgba(0, 0, 25, 0.25);
+  font-size: 0.85em;
+  width: 400px;
+  height: auto;
+  content: "{DF1:Popup-Cntrd:R0-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'On the leftmost portion of the document is the timestamp. Each Closed Caption Data (CCD) packet has a timestamp, whichcorresponds with the frame of the asset containing the CCD packet. For r eadability sake, the timestamp is only printed out when specific Global Control Codes are encountered.'";
+  position: absolute;
+  right: 400px;
+  top: -200px;
 }
 .theme-bg-shapes-right:after {
-  content: "";
-  width: 150px;
-  height: 600px;
-  background: rgba(255, 255, 255, 0.15);
+  transition: all 7s ease-in-out;
+  -webkit-transition: all 7s ease-in-out;
+  -moz-transition: all 7s ease-in-out;
+  -o-transition: all 7s ease-in-out;
+  border-radius: 8px;
+  -moz-transform: skew(-15deg, -15deg);
+  -o-transform: skew(-15deg, -15deg);
+  -ms-transform: skew(-15deg, -15deg);
+  -webkit-transform: skew(-15deg, -15deg);
+  transform: skew(-15deg, -15deg);
+  moz-transform-origin: top right;
+  -o-transform-origin: top right;
+  -ms-transform-origin: top right;
+  -webkit-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  -moz-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  z-index: 0 !important;
+  padding: 40px !important;
   position: absolute;
-  right: 0px;
-  top: 30px;
-  border-radius: 6px;
-  -moz-transform: skew(25deg, 10deg);
-  -o-transform: skew(25deg, 10deg);
-  -ms-transform: skew(25deg, 10deg);
-  -webkit-transform: skew(25deg, 10deg);
-  transform: skew(25deg, 10deg);
-  moz-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-.theme-bg-shapes-right:hover:before {
-  content: "";
-  width: 300px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.1);
-  position: absolute;
-  right: 60px;
-  top: 40px;
-  border-radius: 40px;
-  -moz-transform: skew(95deg, 110deg);
-  -o-transform: skew(95deg, 110deg);
-  -ms-transform: skew(95deg, 110deg);
-  -webkit-transform: skew(95deg, 110deg);
-  transform: skew(95deg, 110deg);
-  moz-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
-}
-.theme-bg-shapes-right:hover:after {
-  content: "";
-  width: 150px;
-  height: 600px;
-  background: rgba(255, 255, 255, 0.15);
-  position: absolute;
-  right: 30px;
-  top: 100px;
-  border-radius: 600px;
-  -moz-transform: skew(2deg, 70deg);
-  -o-transform: skew(2deg, 70deg);
-  -ms-transform: skew(2deg, 70deg);
-  -webkit-transform: skew(2deg, 70deg);
-  transform: skew(2deg, 70deg);
-  moz-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
+  color: rgba(250, 250, 255, 0.1);
+  background: rgba(0, 0, 25, 0.25);
+  font-size: 1em;
+  width: 400px;
+  height: auto;
+  content: "{DF0:Popup-Cntrd:R0-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'The Closed Caption Descriptor File contains a decoded binary representation'";
+  right: 250px;
+  top: -230px;
 }
 
 .theme-bg-shapes-left {
+  z-index: 0 !important;
+  padding: 40px !important;
   position: absolute;
   height: 100%;
-  width: 100%;
-  right: 0;
-  top: 0;
+  width: 100vw;
+  left: 0px;
+  top: 0px;
   overflow: hidden;
-  -webkit-transition: all 0.6s ease-out;
-  -moz-transition: all 0.6s ease-out;
-  -o-transition: all 0.6s ease-out;
-  transition: all 0.6s ease-out;
 }
 .theme-bg-shapes-left:before {
-  -webkit-transition: all 0.8s ease-out;
-  -moz-transition: all 0.8s ease-out;
-  -o-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out;
-  content: "";
-  width: 300px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.1);
-  position: absolute;
-  left: -90px;
-  top: 0;
+  transition: all 8s ease-in-out;
+  -webkit-transition: all 8s ease-in-out;
+  -moz-transition: all 8s ease-in-out;
+  -o-transition: all 8s ease-in-out;
   border-radius: 8px;
-  -moz-transform: skew(25deg, -12deg);
-  -o-transform: skew(25deg, -12deg);
-  -ms-transform: skew(25deg, -12deg);
-  -webkit-transform: skew(25deg, -12deg);
-  transform: skew(25deg, -12deg);
+  -moz-transform: skew(15deg, 15deg);
+  -o-transform: skew(15deg, 15deg);
+  -ms-transform: skew(15deg, 15deg);
+  -webkit-transform: skew(15deg, 15deg);
+  transform: skew(15deg, 15deg);
   moz-transform-origin: top left;
   -o-transform-origin: top left;
   -ms-transform-origin: top left;
   -webkit-transform-origin: top left;
   transform-origin: top left;
+  -webkit-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  -moz-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  z-index: 0 !important;
+  padding: 20px !important;
+  position: absolute;
+  color: rgba(250, 250, 255, 0.1);
+  background: rgba(0, 0, 25, 0.25);
+  font-size: 0.85em;
+  width: 400px;
+  height: auto;
+  content: "{DF3:Popup-Cntrd:R5-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'Tab Control codes are used for positioning the captions. Specifically, they tell how far to move to the right from the current position. Used in conjunction with the Column Number from the Address PAC, it allows the captions to be placed anywhere in the text field. '";
+  left: 100px;
+  top: -50;
 }
 .theme-bg-shapes-left:after {
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  content: "";
-  width: 150px;
-  height: 600px;
-  background: rgba(255, 255, 255, 0.15);
-  position: absolute;
-  left: 0px;
-  top: 30px;
+  transition: all 6s ease-in-out;
+  -webkit-transition: all 6s ease-in-out;
+  -moz-transition: all 6s ease-in-out;
+  -o-transition: all 6s ease-in-out;
   border-radius: 8px;
-  -moz-transform: skew(-25deg, 10deg);
-  -o-transform: skew(-25deg, 10deg);
-  -ms-transform: skew(-25deg, 10deg);
-  -webkit-transform: skew(-25deg, 10deg);
-  transform: skew(-25deg, 10deg);
+  -moz-transform: skew(15deg, 15deg);
+  -o-transform: skew(15deg, 15deg);
+  -ms-transform: skew(15deg, 15deg);
+  -webkit-transform: skew(15deg, 15deg);
+  transform: skew(15deg, 15deg);
   moz-transform-origin: top left;
   -o-transform-origin: top left;
   -ms-transform-origin: top left;
   -webkit-transform-origin: top left;
   transform-origin: top left;
-}
-.theme-bg-shapes-left:hover:before {
-  content: "";
-  width: 300px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  -moz-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.4) !important;
+  z-index: 0 !important;
+  padding: 20px !important;
   position: absolute;
-  left: -90px;
-  top: 50px;
-  border-radius: 20px;
-  -moz-transform: skew(65deg, -12deg);
-  -o-transform: skew(65deg, -12deg);
-  -ms-transform: skew(65deg, -12deg);
-  -webkit-transform: skew(65deg, -12deg);
-  transform: skew(65deg, -12deg);
-  moz-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
+  color: rgba(250, 250, 255, 0.1);
+  background: rgba(0, 0, 25, 0.25);
+  font-size: 0.95em;
+  width: 400px;
+  height: auto;
+  content: "{DF0:Popup-Cntrd:R0-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'The Global Control are represented inline by wrapping the mnemonic code with braces.'";
+  left: 200px;
+  top: -60px;
 }
-.theme-bg-shapes-left:hover:after {
-  content: "";
-  width: 150px;
-  height: 600px;
-  background: rgba(255, 255, 255, 0.15);
-  position: absolute;
-  left: 100px;
-  top: 80px;
-  border-radius: 50px;
-  -moz-transform: skew(-25deg, 60deg);
-  -o-transform: skew(-25deg, 60deg);
-  -ms-transform: skew(-25deg, 60deg);
-  -webkit-transform: skew(-25deg, 60deg);
-  transform: skew(-25deg, 60deg);
-  moz-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
+
+.page-header.theme-bg-dark {
+  background-color: #BBC2FF;
+  height: 440px !important;
+  background: linear-gradient(0deg, #BBC2FF 2%, #515ADA 100%);
+  position: relative;
+  transition: background 2s ease-in-out;
+  -webkit-transition: background 2s ease-in-out;
+  -moz-transition: background 2s ease-in-out;
+  -o-transition: background 2s ease-in-out;
+}
+.page-header.theme-bg-dark:hover .theme-bg-shapes-right:before {
+  right: 0px;
+  top: 40px;
+  -webkit-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.8) !important;
+  -moz-box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.8) !important;
+  box-shadow: 0px 20px 40px rgba(67, 96, 255, 0.8) !important;
+  -moz-transform: skew(-5deg, -10deg);
+  -o-transform: skew(-5deg, -10deg);
+  -ms-transform: skew(-5deg, -10deg);
+  -webkit-transform: skew(-5deg, -10deg);
+  transform: skew(-5deg, -10deg);
+}
+.page-header.theme-bg-dark:hover .theme-bg-shapes-right:after {
+  right: -250px;
+  top: 100px;
+  -moz-transform: skew(-5deg, -10deg);
+  -o-transform: skew(-5deg, -10deg);
+  -ms-transform: skew(-5deg, -10deg);
+  -webkit-transform: skew(-5deg, -10deg);
+  transform: skew(-5deg, -10deg);
+}
+.page-header.theme-bg-dark:hover .theme-bg-shapes-left:before {
+  left: -100px;
+  top: -60px;
+  -moz-transform: skew(-15deg, -15deg);
+  -o-transform: skew(-15deg, -15deg);
+  -ms-transform: skew(-15deg, -15deg);
+  -webkit-transform: skew(-15deg, -15deg);
+  transform: skew(-15deg, -15deg);
+}
+.page-header.theme-bg-dark:hover .theme-bg-shapes-left:after {
+  left: -300px;
+  top: 200px;
+  -moz-transform: skew(-15deg, -15deg);
+  -o-transform: skew(-15deg, -15deg);
+  -ms-transform: skew(-15deg, -15deg);
+  -webkit-transform: skew(-15deg, -15deg);
+  transform: skew(-15deg, -15deg);
 }
 
 /*********** Theme Utilities **********/
@@ -11410,14 +11527,17 @@ a.theme-link:hover {
 }
 
 /* Page headers */
-.page-header.theme-bg-dark .page-heading {
+.page-header.theme-bg-dark .hero-container .page-heading, .page-header.theme-bg-light .hero-container .page-heading {
   color: #fff;
+  font-weight: 900;
 }
-.page-header.theme-bg-dark .page-intro {
+.page-header.theme-bg-dark .hero-container .page-intro, .page-header.theme-bg-light .hero-container .page-intro {
+  font-size: 1.855rem;
   color: #fff;
-  -webkit-opacity: 0.8;
-  -moz-opacity: 0.8;
-  opacity: 0.8;
+  font-weight: 200;
+  -webkit-opacity: 0.65;
+  -moz-opacity: 0.65;
+  opacity: 0.65;
 }
 
 .social-list li {
@@ -11452,14 +11572,6 @@ a.theme-link:hover {
 }
 
 /* Page related */
-.page-heading {
-  font-size: 2.5rem;
-}
-
-.page-intro {
-  font-size: 1.125rem;
-}
-
 .h-card, .vcard {
   padding: 15px 25px;
   border-radius: 8px !important;

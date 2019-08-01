@@ -1,22 +1,28 @@
-.page-header {
-    background-color: #515ada !important;
-    height: 100%;
-    background: linear-gradient(-90deg, #bbc2ff 0%, #515ada 100%);
-}
-.page-header:after {
-    position: fixed;
-    width: 100%;
-    text-align: center;
-}
 
+#cloudsfilter {
+    position: relative;
+}
+#hero:after {
+    position   : fixed;
+    width      : 100%;
+    text-align : center;
+}
 #clouds {
-    overflow: hidden;
-    width: 1px;
-    height: 1px;
-    -webkit-transform: translate(-100%, -100%);
-    transform: translate(-100%, -100%);
-    border-radius: 50%;
-    -webkit-filter: url(#cloudsfilter);
-    filter: url(#cloudsfilter);
-    transition: transform 36s ease-in-out;
+    position: absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    opacity : 0.50;
+    overflow              : hidden;
+    width                 : 1px;
+    height                : 1px;
+    /*transition            : all 36s ease-in-out;*/
+    /*-webkit-transition    : all 36s ease-in-out;*/
+    transform             : translate(-80%, -100%);
+    -webkit-transform     : translate(-80%, -100%);
+    border-radius         : 42%;
+    -webkit-border-radius : 42%;
+    filter                : url(#cloudsfilter);
+    -webkit-filter        : url(#cloudsfilter);
 }

@@ -1,9 +1,9 @@
 /* ============= Base ============= */
-@mixin trans($count: 0.3s) {
-	-webkit-transition : all $count ease-out;
-	-moz-transition    : all $count ease-out;
-	-o-transition      : all $count ease-out;
-	transition         : all $count ease-out;
+@mixin trans($count: 0.3s, $properties: all, $transition: ease-in-out) {
+	transition         : $properties $count $transition;
+	-webkit-transition : $properties $count $transition;
+	-moz-transition    : $properties $count $transition;
+	-o-transition      : $properties $count $transition;
 }
 @mixin blue-shadow($depth: 20px, $alpha: 0.1) {
 	-webkit-box-shadow : 0px $depth/2 $depth rgba(red($color-blue), green($color-blue), blue($color-blue), $alpha) !important;
@@ -120,7 +120,7 @@ a.theme-link {
 	height: 2.75rem;
 	border-color: darken($theme-bg-light, 5%);
 	&:focus {
-		box-shadow: 0 5px 15px 0 rgba(red($color-blue), green($color-blue), blue($color-blue),0.15);
+		box-shadow: 0 5px 15px 0 rgba(red($color-blue), green($color-blue), blue($color-blue),0.25);
 		outline: none;
 	}
 }
@@ -145,128 +145,190 @@ a.theme-link {
 .theme-bg-dark {
 	background: $theme-bg-dark;
 }
+
+//.theme-bg-shapes-right:hover:before {
+//	background: rgba(255, 255, 255, 0.1);
+//	position: absolute;
+//	right: 60px;
+//	top: 40px;
+//	-moz-transform: skew(95deg, 110deg);
+//	-o-transform: skew(95deg, 110deg);
+//	-ms-transform: skew(95deg, 110deg);
+//	-webkit-transform: skew(95deg, 110deg);
+//	transform: skew(95deg, 110deg);
+//}
+//.theme-bg-shapes-right:hover:after {
+//	background: rgba(255, 255, 255, 0.15);
+//	position: absolute;
+//	right: 30px;
+//	top: 100px;
+//	border-radius: 600px;
+//	-moz-transform: skew(2deg, 70deg);
+//	-o-transform: skew(2deg, 70deg);
+//	-ms-transform: skew(2deg, 70deg);
+//	-webkit-transform: skew(2deg, 70deg);
+//	transform: skew(2deg, 70deg);
+//}
+//.theme-bg-shapes-left:hover:before {
+//	background: rgba(255, 255, 255, 0.1);
+//	position: absolute;
+//	left: -90px;
+//	top: 50px;
+//	border-radius: 20px;
+//	-moz-transform: skew(65deg, -12deg);
+//	-o-transform: skew(65deg, -12deg);
+//	-ms-transform: skew(65deg, -12deg);
+//	-webkit-transform: skew(65deg, -12deg);
+//	transform: skew(65deg, -12deg);
+//}
+//.theme-bg-shapes-left:hover:after {
+//	background: rgba(255, 255, 255, 0.15);
+//	position: absolute;
+//	left: 100px;
+//	top: 80px;
+//	border-radius: 50px;
+//	-moz-transform: skew(-25deg, 60deg);
+//	-o-transform: skew(-25deg, 60deg);
+//	-ms-transform: skew(-25deg, 60deg);
+//	-webkit-transform: skew(-25deg, 60deg);
+//	transform: skew(-25deg, 60deg);
+//}
+
+
+
+$TXT: rgba(250,250,255,0.1);
+$BG: rgba(0, 0, 25, 0.25);
 .theme-bg-shapes-right {
+	z-index:0 !important;
+	padding : 20px !important;
 	position: absolute;
 	height: 100%;
-	width: 100%;
-	right: 0;
+	width: 100vw;
+	right: 0px;
 	top: 0;
 	overflow:hidden;
-	@include trans(.8s);
 	&:before {
-		content: "";
+		@include trans(9s);
+		@include border-radius(8px);
+		@include skew(-15,-15);
+		@include transform-origin(top right);
+		@include blue-shadow(40px,0.4);
+		z-index:0 !important;
+		padding : 40px !important;
+		color:$TXT;
+		background: $BG;
+		font-size : 0.85em;
 		width: 400px;
-	    height: 150px;
-	    background: rgba(256, 256, 256, 0.1);
+		height: auto;
+		content: "{DF1:Popup-Cntrd:R0-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'On the leftmost portion of the document is the timestamp. Each Closed Caption Data (CCD) packet has a timestamp, whichcorresponds with the frame of the asset containing the CCD packet. For r eadability sake, the timestamp is only printed out when specific Global Control Codes are encountered.'";
 	    position: absolute;
-	    right: -60px;
-	    top: 0;
-	    @include border-radius(8px);
-	    @include skew(25,-10);
-        @include transform-origin(top left);
-		@include trans(.7s);
+	    right: 400px;
+	    top: -200px;
 	}
 	&:after {
-		content: "";
-		width: 150px;
-	    height: 600px;
-	    background: rgba(256, 256, 256, 0.15);
-	    position: absolute;
-	    right: 0px;
-	    top: 30px;
-	    @include border-radius(6px);
-	    @include skew(25,10);
-        @include transform-origin(top left);
-		@include trans(.5s);
-	}
-	&:hover {
-		&:before {
-			content: "";
-			width: 300px;
-			height: 150px;
-			background: rgba(256, 256, 256, 0.1);
-			position: absolute;
-			right: 60px;
-			top: 40px;
-			@include border-radius(40px);
-			@include skew(95,110);
-			@include transform-origin(top left);
-		}
-		&:after {
-			content: "";
-			width: 150px;
-			height: 600px;
-			background: rgba(256, 256, 256, 0.15);
-			position: absolute;
-			right: 30px;
-			top: 100px;
-			@include border-radius(600px);
-			@include skew(2,70);
-			@include transform-origin(top left);
-		}
+		@include trans(7s);
+		@include border-radius(8px);
+		@include skew(-15,-15);
+		@include transform-origin(top right);
+		@include blue-shadow(40px,0.4);
+		z-index:0 !important;
+		padding : 40px !important;
+		position: absolute;
+		color:$TXT;
+		background: $BG;
+		font-size : 1em;
+		width: 400px;
+		height: auto;
+		content: "{DF0:Popup-Cntrd:R0-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'The Closed Caption Descriptor File contains a decoded binary representation'";
+	    right: 250px;
+	    top: -230px;
 	}
 }
 .theme-bg-shapes-left {
+	z-index:0 !important;
+	padding : 40px !important;
 	position: absolute;
 	height: 100%;
-	width: 100%;
-	right: 0;
-	top: 0;
+	width: 100vw;
+	left: 0px;
+	top: 0px;
 	overflow:hidden;
-	@include trans(.6s);
-	&:before {
-		@include trans(.8s);
-		content: "";
-		width: 300px;
-	    height: 150px;
-	    background: rgba(256, 256, 256, 0.1);
-	    position: absolute;
-	    left: -90px;
-	    top: 0;
-	    @include border-radius(8px);
-	    @include skew(25,-12);
-        @include transform-origin(top left);
+	&:before {;
+		@include trans(8s);
+		@include border-radius(8px);
+		@include skew(15,15);
+		@include transform-origin(top left);
+		@include blue-shadow(40px,0.4);
+		z-index:0 !important;
+		padding : 20px !important;
+		position: absolute;
+		color:$TXT;
+		background: $BG;
+		font-size : 0.85em;
+		width: 400px;
+		height: auto;
+		content: "{DF3:Popup-Cntrd:R5-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'Tab Control codes are used for positioning the captions. Specifically, they tell how far to move to the right from the current position. Used in conjunction with the Column Number from the Address PAC, it allows the captions to be placed anywhere in the text field. '";
+	    left: 100px;
+	    top: -50;
 	}
 	&:after {
-		@include trans(.5s);
-		content: "";
-		width: 150px;
-	    height: 600px;
-	    background: rgba(256, 256, 256, 0.15);
-	    position: absolute;
-	    left: 0px;
-	    top: 30px;
-	    @include border-radius(8px);
-	    @include skew(-25,10);
-        @include transform-origin(top left);
+		@include trans(6s);
+		@include border-radius(8px);
+		@include skew(15,15);
+		@include transform-origin(top left);
+		@include blue-shadow(40px,0.4);
+		z-index:0 !important;
+		padding : 20px !important;
+		position: absolute;
+		color:$TXT;
+		background: $BG;
+		font-size : 0.95em;
+		width: 400px;
+		height: auto;
+		content: "{DF0:Popup-Cntrd:R0-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'The Global Control are represented inline by wrapping the mnemonic code with braces.'";
+	    left: 200px;
+	    top: -60px;
 	}
+}
+.page-header.theme-bg-dark {
+	background-color : #BBC2FF;
+	height           : 440px !important;
+	background       : linear-gradient(0deg, #BBC2FF 2%, #515ADA 100%);
+	position         : relative;
+	@include trans(2s, background, ease-in-out);
 	&:hover {
-		&:before {
-			content: "";
-			width: 300px;
-			height: 150px;
-			background: rgba(256, 256, 256, 0.1);
-			position: absolute;
-			left: -90px;
-			top: 50px;
-			@include border-radius(20px);
-			@include skew(65,-12);
-			@include transform-origin(top left);
+		.theme-bg-shapes-right {
+			&:before {
+				right: 0px;
+				top: 40px;
+				@include blue-shadow(40px,0.8);
+				@include skew(-5,-10);
+			}
+			&:after {
+				right: -250px;
+				top: 100px;
+				@include skew(-5,-10);
+			}
 		}
-		&:after {
-			content: "";
-			width: 150px;
-			height: 600px;
-			background: rgba(256, 256, 256, 0.15);
-			position: absolute;
-			left: 100px;
-			top: 80px;
-			@include border-radius(50px);
-			@include skew(-25,60);
-			@include transform-origin(top left);
+		.theme-bg-shapes-left {
+			&:before {
+				left: -100px;
+				top: -60px;
+				@include skew(-15,-15);
+			}
+			&:after {
+				left: -300px;
+				top: 200px;
+				@include skew(-15,-15);
+			}
 		}
 	}
 }
+
+
+
+
+
 
 /*********** Theme Utilities **********/
 .border-radius-0 {
@@ -299,13 +361,20 @@ a.theme-link {
 }
 /* Page headers */
 .page-header {
-	&.theme-bg-dark {
-		.page-heading {
-			color: #fff;
-		}
-		.page-intro {
-			color: #fff;
-			@include opacity(0.8);
+	&.theme-bg-dark, &.theme-bg-light {
+		.hero-container {
+			//z-index:1000 !important;
+			.page-heading {
+				color: #fff;
+				font-weight:900;
+			}
+			.page-intro {
+				font-size: 1.855rem;
+				color: #fff;
+				font-weight:200;
+				@include opacity(0.65);
+			}
+			// TODO Add Mobile
 		}
 	}
 }
@@ -341,10 +410,5 @@ a.theme-link {
 	}
 }
 /* Page related */
-.page-heading {
-	font-size: 2.5rem;
-}
-.page-intro {
-	font-size: 1.125rem;
-}
+
 
