@@ -35,6 +35,15 @@ $color-blue
   letter-spacing: 0.6px;
 }
 
+div.scroll-spacer {
+  display: block !important;
+  margin-top: 20px;
+}
+div.scroll-spacer:before {
+  content: " ";
+  clear: both;
+}
+
 img.icon_profile {
   display: inline-block;
   width: 100%;
@@ -77,6 +86,9 @@ body {
     display: none !important;
   }
 }
+body .docs-wrapper {
+  background-color: #fbfcfc;
+}
 body .docs-wrapper > .docs-sidebar {
   width: 350px !important;
   margin-top: 0px;
@@ -96,18 +108,11 @@ body .docs-wrapper > .docs-sidebar .top-search-box {
 }
 body .docs-wrapper nav.docs-nav.navbar {
   margin-top: 30px;
-  padding-top: 50px;
-  background-color: #fbfcfc;
+  padding: 15px !important;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-}
-@media (min-width: 769px) {
-  body .docs-wrapper nav.docs-nav.navbar {
-    padding-top: 20px;
-    margin-top: 30px;
-  }
 }
 body .docs-wrapper nav.docs-nav.navbar ul.section-items > li {
   -webkit-transition: all 0.6s ease-out;
@@ -129,9 +134,6 @@ body .docs-wrapper nav.docs-nav.navbar ul.section-items > li a:hover * {
 }
 body .docs-wrapper nav.docs-nav.navbar ul.section-items > li:hover {
   color: #4360FF;
-}
-body .docs-wrapper nav.docs-nav.navbar:hover {
-  background-color: white !important;
 }
 body article {
   font-weight: 500;
@@ -235,6 +237,19 @@ body article.docs-article section.docs-section > h3 {
   margin-top: 50px !important;
   margin-bottom: 1.4rem !important;
   color: #ffa700;
+  font-weight: 200 !important;
+}
+body article.docs-article section.docs-section > h3:before {
+  content: "SECTION HEADER";
+  display: block !important;
+  letter-spacing: 10px !important;
+  font-size: 12px !important;
+  color: #c7cdd2 !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  padding-bottom: 20px !important;
+  border-bottom: 1px dotted #ebeef0;
+  clerar: both;
 }
 body article.docs-article section.docs-section > h3.title {
   font-size: calc(20px + (46 - 18) * ((100vw - 300px) / (1600 - 300))) !important;
@@ -245,6 +260,18 @@ body article.docs-article section.docs-section > h4, body article.docs-article s
   margin-top: 15px;
   margin-bottom: 2.75rem;
   color: #4360FF;
+}
+body article.docs-article section.docs-section > h4:before, body article.docs-article section.docs-section h4:before, body article.docs-article section.docs-section .h4:before {
+  content: " ";
+  display: block !important;
+  letter-spacing: 10px !important;
+  font-size: 12px !important;
+  color: #c7cdd2 !important;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 5px !important;
+  border-bottom: 1px dotted #ebeef0;
+  clerar: both;
 }
 body article.docs-article section.docs-section >, body article.docs-article section.docs-section h5, body article.docs-article section.docs-section h5, body article.docs-article section.docs-section .h5 {
   font-weight: 700 !important;

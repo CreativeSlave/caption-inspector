@@ -115,8 +115,10 @@ class BuildNav {
         let html = $(element).html();
         indexId = BuildNav.getId(indexId);
         $(element).html(`
+          <div class="scroll-spacer"></div>
           <a name="${indexId}" id="SECTION_${indexId}"></a>
-          <span class="index-id">${indexId}</span>${html}
+          <span class="index-id">${indexId}</span>
+          ${html}
       `);
       }
     } catch (er) {
@@ -166,25 +168,42 @@ class BuildNav {
             }
           });
         $(this)
-          .find("h3")
-          .each(function(index, CHILD_SECTION) {
-            let label = BuildNav.getLabel(CHILD_SECTION);
-            let id = $(CHILD_SECTION).attr("id");
-            BuildNav.appendIndex(CHILD_SECTION, id);
-            if (id && id !== "") {
-              let section = BuildNav.getTemplate(label.trim(), "file", id);
-
-              let childElement = new NavElement(
-                navigationElement,
-                label,
-                id,
-                BuildNav.CHILD
-              );
-              navigationElement.addChild(childElement);
-
-              BuildNav.HTML_ARRAY.push(section);
-            }
-          });
+            .find("h3")
+            .each(function(index, CHILD_SECTION) {
+              let label = BuildNav.getLabel(CHILD_SECTION);
+              let id = $(CHILD_SECTION).attr("id");
+              BuildNav.appendIndex(CHILD_SECTION, id);
+              if (id && id !== "") {
+                let section = BuildNav.getTemplate(label.trim(), "file", id);
+          
+                let childElement = new NavElement(
+                    navigationElement,
+                    label,
+                    id,
+                    BuildNav.CHILD
+                );
+                navigationElement.addChild(childElement);
+          
+                BuildNav.HTML_ARRAY.push(section);
+              }
+            });
+        $(this)
+            .find("h4")
+            .each(function(index, CHILD_SECTION) {
+              let label = BuildNav.getLabel(CHILD_SECTION);
+              let id = $(CHILD_SECTION).attr("id");
+              BuildNav.appendIndex(CHILD_SECTION, id);
+              if (id && id !== "") {
+                let section = BuildNav.getTemplate(label.trim(), "sub", id);
+          
+                let childElement = new NavElement(
+                    navigationElement, label, id,
+                    BuildNav.CHILD);
+                navigationElement.addChild(childElement);
+          
+                BuildNav.HTML_ARRAY.push(section);
+              }
+            });
       });
     } catch (er) {
       console.warn(er);

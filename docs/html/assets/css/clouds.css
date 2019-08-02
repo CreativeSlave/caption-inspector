@@ -1,33 +1,9 @@
-
-#cloudsfilter {
-    position: relative;
-}
-#hero:after {
-    position   : fixed;
-    width      : 100%;
-    text-align : center;
-}
-#clouds {
-    position: absolute;
-    top:0px;
-    left:0px;
-    right:0px;
-    bottom:0px;
-    opacity : 0.50;
-    overflow              : hidden;
-    width                 : 1px;
-    height                : 1px;
-    /*transition            : all 36s ease-in-out;*/
-    /*-webkit-transition    : all 36s ease-in-out;*/
-    transform             : translate(-80%, -100%);
-    -webkit-transform     : translate(-80%, -100%);
-    border-radius         : 42%;
-    -webkit-border-radius : 42%;
-    filter                : url(#cloudsfilter);
-    -webkit-filter        : url(#cloudsfilter);
-    
-    -webkit-transition : all 0.3s ease-out;
-    -moz-transition    : all 0.3s ease-out;
-    -o-transition      : all 0.3s ease-out;
-    transition         : all 0.3s ease-out;
+#content {
+    position: fixed !important;
+    color:white;
+    background-color : RGBA(138, 154, 254, 1.00);
+    background-image : linear-gradient(0deg, RGBA(167, 196, 255, 1.00) 10%, RGBA(67, 96, 255, 1) 40%, RGBA(167, 196, 255, 1.00) 10%) !important;
+    width            : 100vw;
+    height           : 97vh;
+    margin-top       : 3vh;
 }
