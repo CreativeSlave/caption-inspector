@@ -1,0 +1,10 @@
+
+
+$header-height:     100px;
+
+$mobile-max-width:  768px;
+
+@media (max-width : $mobile-max-width) {
+    display : none;
+}
+

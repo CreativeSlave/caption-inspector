@@ -1,90 +1,110 @@
 /* ============= Theme Mixins ============= */
-@mixin opacity ($opacity: 0.5) {
-	-webkit-opacity: 	$opacity;
-	-moz-opacity: 		$opacity;
-	opacity: 		$opacity;
+@import "colors";
+
+@function rgbaColor($color, $alpha: 1) {
+    $result : rgba(red($color), green($color), blue($color), $alpha);
+    @return $result;
+}
+@mixin transform($transforms) {
+    transform         : $transforms !important;
+    -webkit-transform : $transforms !important;
+    -moz-transform    : $transforms !important;
+    -o-transform      : $transforms !important;
+    -ms-transform     : $transforms !important;
+}
+@mixin opacity($opacity: 0.5) {
+    -webkit-opacity : $opacity;
+    -moz-opacity    : $opacity;
+    opacity         : $opacity;
+}
+@mixin square($size: 60px, $max-size: $size) {
+    width      : $size !important;
+    height     : $size !important;
+    max-width  : $max-size !important;
+    max-height : $max-size !important;
+}
+@mixin scale($factor) {
+    -webkit-transform : scale($factor);
+    -moz-transform    : scale($factor);
+    -ms-transform     : scale($factor);
+    -o-transform      : scale($factor);
+}
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+@mixin translate($x, $y) {
+    @include transform(translate($x, $y));
+}
+@mixin skew($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+@mixin rotate($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+@mixin transform-origin($origin) {
+    moz-transform-origin     : $origin;
+    -o-transform-origin      : $origin;
+    -ms-transform-origin     : $origin;
+    -webkit-transform-origin : $origin;
+    transform-origin         : $origin;
 }
 
-@mixin scale ($factor) {
-	-webkit-transform: scale($factor);
-	-moz-transform: 	 scale($factor);
-	-ms-transform: 		 scale($factor);
-	-o-transform: 		 scale($factor);
+@mixin background-size($string: contain) {
+    -webkit-background-size : $string;
+    -moz-background-size    : $string;
+    -o-background-size      : $string;
+    background-size         : $string;
 }
-
-
-@mixin background-size ($string: contain) {
-    -webkit-background-size: $string;
-    -moz-background-size: $string;
-    -o-background-size: $string;
-    background-size: $string;
+@mixin reset-box-sizing($size:content-box) {
+    &,
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing : $size;
+        -moz-box-sizing    : $size;
+        box-sizing         : $size;
+    }
 }
-
-
-@mixin reset-box-sizing ($size:content-box) {
-  &,
-  *,
-  *:before,
-  *:after {
-    -webkit-box-sizing: $size;
-	-moz-box-sizing:    $size;
-	box-sizing:         $size;
-  }
-}
-
-@mixin placeholder ($color: #999) {
+@mixin placeholder($color: #999999) {
     &::-webkit-input-placeholder { /* WebKit browsers */
-        color: $color;
+        color : $color;
     }
     &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-        color: $color;
+        color : $color;
     }
     &::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: $color;
+        color : $color;
     }
     &:-ms-input-placeholder { /* Internet Explorer 10+ */
-        color: $color;
+        color : $color;
     }
 }
 
-@mixin box-shadow ($shaodw) {
-	-webkit-box-shadow: $shaodw;
-	-moz-box-shadow: $shaodw;
-	box-shadow: $shaodw;
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow : $shadow !important;
+    -moz-box-shadow    : $shadow !important;
+    box-shadow         : $shadow !important;
 }
 
-// generic transform
-@mixin transform($transforms) {
-	   -moz-transform: $transforms;
-	     -o-transform: $transforms;
-	    -ms-transform: $transforms;
-	-webkit-transform: $transforms;
-          transform: $transforms;
+@mixin trans($count: 0.3s, $properties: all, $transition: ease-in-out) {
+    transform         : $properties $count $transition !important;
+    -webkit-transform : $properties $count $transition !important;
+    -moz-transform    : $properties $count $transition !important;
+    -o-transform      : $properties $count $transition !important;
+    -ms-transform     : $properties $count $transition !important;
 }
-// rotate
-@mixin rotate ($deg) {
-  @include transform(rotate(#{$deg}deg));
+@mixin blue-shadow($position:5px, $depth: 20px, $alpha: 0.1) {
+    @include box-shadow(0px $position $depth rgba($color-blue, $alpha));
 }
- 
-// scale
-@mixin scale($scale) {
-	 @include transform(scale($scale));
-} 
-// translate
-@mixin translate ($x, $y) {
-   @include transform(translate($x, $y));
+@mixin white-inset($depth: 20px, $alpha: 0.4) {
+    @include box-shadow(inset 0px 0px $depth rgba(255, 255, 255, $alpha));
 }
-// skew
-@mixin skew ($x, $y) {
-   @include transform(skew(#{$x}deg, #{$y}deg));
-}
-//transform origin
-@mixin transform-origin ($origin) {
-    moz-transform-origin: $origin;
-	     -o-transform-origin: $origin;
-	    -ms-transform-origin: $origin;
-	-webkit-transform-origin: $origin;
-          transform-origin: $origin;
+@mixin blue-inset($depth: 25px, $alpha: 0.4) {
+    box-shadow         : inset 0px 0px $depth rgba($color-blue, $alpha) !important;
+    -webkit-box-shadow : inset 0px 0px $depth rgba($color-blue, $alpha) !important;
+    -moz-box-shadow    : inset 0px 0px $depth rgba($color-blue, $alpha) !important;
+
+    //@include  box-shadow(inset 0px 0px $depth rgba(red($color-blue), green($color-blue), blue($color-blue), $alpha));
 }
 
 

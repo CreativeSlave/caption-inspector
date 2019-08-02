@@ -1,34 +1,10 @@
 @import "colors";
+@import "mixins";
 $side-bar-width : 350px;
+$mobile-side-bar-width : 280px;
+$mobile-max-width : 768px;
 
-@mixin trans($count: 0.3s, $properties: all, $transition: ease-in-out) {
-    transition         : $properties $count $transition;
-    -webkit-transition : $properties $count $transition;
-    -moz-transition    : $properties $count $transition;
-    -o-transition      : $properties $count $transition;
-}
-@mixin blue-shadow($position:5px, $depth: 20px, $alpha: 0.1) {
-    box-shadow         : 0px $position $depth rgba(red($color-blue), green($color-blue), blue($color-blue), $alpha) !important;
-    -webkit-box-shadow : 0px $position $depth rgba(red($color-blue), green($color-blue), blue($color-blue), $alpha) !important;
-    -moz-box-shadow    : 0px $position $depth rgba(red($color-blue), green($color-blue), blue($color-blue), $alpha) !important;
-}
-@mixin white-inset($depth: 20px, $alpha: 0.4) {
-    box-shadow         : inset 0px 0px $depth rgba(255, 255, 255, $alpha) !important;
-    -webkit-box-shadow : inset 0px 0px $depth rgba(255, 255, 255, $alpha) !important;
-    -moz-box-shadow    : inset 0px 0px $depth rgba(255, 255, 255, $alpha) !important;
-}
-@mixin blue-inset($depth: 20px, $alpha: 0.4) {
-    box-shadow         : inset 0px 0px $depth rgba(red($color-blue), green($color-blue), blue($color-blue), $alpha) !important;
-    -webkit-box-shadow : inset 0px 0px $depth rgba(red($color-blue), green($color-blue), blue($color-blue), $alpha) !important;
-    -moz-box-shadow    : inset 0px 0px $depth rgba(red($color-blue), green($color-blue), blue($color-blue), $alpha) !important;
-}
 
-@mixin square($size: 60px, $max-size: $size) {
-    width      : $size !important;
-    height     : $size !important;
-    max-width  : $max-size !important;
-    max-height : $max-size !important;
-}
 .main-search-box {
     max-width : 600px;
 }
@@ -49,7 +25,7 @@ $side-bar-width : 350px;
     line-height    : 1em;
     transition     : background-color .6s;
 }
-
+// .index is the home page
 .index.docs-overview {
     .card {
         color         : $color-blue !important;
@@ -181,7 +157,7 @@ header.header {
         &:hover {
             @include blue-shadow(0px, 50px, 0.65);
             //height : 70vh !important;
-            @media (max-width : 768px) {
+            @media (max-width : $mobile-max-width) {
                 //height : 80px !important;
             }
             > div.desktop-search-results {
@@ -217,6 +193,9 @@ header.header {
     right    : 0px;
     bottom   : 0px;
     opacity  : 0.20;
+    @media (max-width : $mobile-max-width) {
+        display : none;
+    }
 }
 .site-logo > .logo-container {
     border-radius      : 300px;
@@ -249,7 +228,7 @@ header.header {
             path.inspector-face {
                 //fill         : $color-cool-grey-12;
                 //fill         : rgba(red($color-blue-dark), green($color-blue-dark), blue($color-blue-dark), 0.9);
-                fill         : rgba(140, 140, 140, 0.8);
+                fill         : rgba(90, 90, 105, 0.9);
                 //stroke       : rgba(100, 100, 140, 0.5);
                 stroke       : rgba(red($color-blue-dark), green($color-blue-dark), blue($color-blue-dark), 0.2);
                 stroke-width : 0.5%;
@@ -274,7 +253,7 @@ header.header {
             }
         }
     }
-    //@media (max-width : 768px) {
+    //@media (max-width : $mobile-max-width) {
     //    display : none !important;
     //}
 }
@@ -309,7 +288,7 @@ header.header {
     }
 }
 .docs-branding {
-    min-height : 69px;
+    min-height : 85px;
     .top-search-box {
         width : 300px;
     }
@@ -361,6 +340,9 @@ header.header {
 .docs-sidebar {
     display         : none;
     width           : $side-bar-width;
+    @media (max-width : $mobile-max-width) {
+        width : $mobile-side-bar-width;
+    }
     position        : fixed;
     z-index         : 50;
     top             : 85px;
@@ -379,7 +361,15 @@ header.header {
     }
     &::-webkit-scrollbar-thumb {
         background-color : rgba(red($color-blue), green($color-blue), blue($color-blue), 0.2);
-        @include border-radius(2rem);
+        @include border-radius(60px);
+    }
+    @media (max-width : $mobile-max-width) {
+        &::-webkit-scrollbar {
+            background-color : transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color : transparent;
+        }
     }
     border-right    : 2px solid rgba(255, 255, 255, 0.75) !important;
     @include transition(transform .5s ease-in-out);
@@ -394,12 +384,13 @@ header.header {
     }
 }
 .docs-nav {
+    &.navbar {display: block!important;}
+
     overflow-y : auto;
-    padding    : 1rem;
+    padding    : 10px;
     .section-title {
         font-size     : 1rem;
-        margin-bottom : 1rem;
-        //border-right:2px solid rgba(255,255,255,0.95) !important;
+        margin-bottom : 0 !important;
         a {
             &:hover {
                 text-decoration : none;
@@ -413,7 +404,7 @@ header.header {
     .nav-item {
         margin-left : 2.5rem;
         &.section-title {
-            margin-left : 0;
+            margin-left : 2px;
             .nav-link {
                 padding : 0;
                 &:before {display : none;}
@@ -421,32 +412,34 @@ header.header {
         }
     }
     .nav-link {
-        @include border-radius(10px);
+        @include border-radius(60px);
+        @include trans(.4s, all, ease-out);
         display  : inline-block;
         position : relative;
-        padding  : 6px 10px;
+        padding  : 5px 10px;
         color    : $theme-text-color-secondary;
         .theme-icon-holder {
             font-size   : 0.875rem;
-            padding-top : 0.375rem;
+            padding-top : 0.37rem;
         }
-        &.active {
+        &.active,&:hover {
             color : $theme-color-primary;
             &:before {
+                color      : #FFFFFF !important;
                 background-color : $theme-color-primary;
             }
             .theme-icon-holder {
-                color      : #FFFFFF;
+                color      : #FFFFFF !important;
                 background : $theme-color-primary;
             }
         }
-        margin   : 2px 0;
+        margin   : 1px 0;
         &:before {
             @include trans(.4s, all, ease-out);
-            background-color : rgba(red($color-blue), green($color-blue), blue($color-blue), 0.1);
+            background-color : rgba(red($color-blue), green($color-blue), blue($color-blue), 0.2);
             content          : ' ';
             display          : inline-block;
-            height           : inherit;
+            //height           : inherit;
             left             : -30px;
             margin-top       : 0rem;
             position         : absolute;
@@ -469,19 +462,20 @@ header.header {
         &:hover {
             background-color : rgba(red($color-blue), green($color-blue), blue($color-blue), 0.05);
             &:before {
+                border : 2px solid rgba(red($color-blue), green($color-blue), blue($color-blue), 1);
                 background-color : rgba(red($color-blue), green($color-blue), blue($color-blue), 0.5);
                 width            : 15px;
                 height           : 15px;
-                margin-top       : 10px;
+                margin-top       : 13px;
                 left             : -35px;
             }
             &:after {
-                background-color : rgba(red($color-blue), green($color-blue), blue($color-blue), 0.5);
+                background-color : rgba(red($color-blue), green($color-blue), blue($color-blue), 0.75);
                 opacity          : 1;
-                height           : 5px;
-                margin-top       : 15px;
-                width            : 8px;
-                left             : -15px;
+                height           : 3px;
+                margin-top       : 18px;
+                width            : 15px;
+                left             : -20px;
             }
             color            : $color-blue;
             .outline-indicator {
@@ -533,23 +527,23 @@ header.header {
         color         : $theme-text-color-primary
     }
     h2 {
-        color : darken($theme-text-color-secondary, 10%);
+        color : darken($theme-text-color-secondary, 25%);
     }
     h3 {
-        font-size : 1.5rem;
-        color     : darken($theme-text-color-secondary, 10%);
+        //font-size : 1.5rem;
+        color     : darken($theme-text-color-secondary, 20%);
     }
     h4 {
-        font-size : 1.25rem;
-        color     : darken($theme-text-color-secondary, 10%);
+        //font-size : 1.25rem;
+        color     : darken($theme-text-color-secondary, 15%);
     }
     h5 {
-        font-size : 1rem;
+        //font-size : 1rem;
         color     : darken($theme-text-color-secondary, 10%);
     }
     h6 {
-        font-size : 0.875rem;
-        color     : darken($theme-text-color-secondary, 10%);
+        //font-size : 0.875rem;
+        color     : darken($theme-text-color-secondary, 5%);
     }
     ul, ol, dl {
         padding-left : 1.5rem;
@@ -562,7 +556,7 @@ header.header {
 p.legal {
     font-size      : 16px !important;
     letter-spacing : 0.01px !important;
-    line-height    : 22px !important;
+    line-height    : 28px !important;
     color          : $color-cool-grey-7 !important;
     text-align     : justify;
 }
@@ -578,24 +572,26 @@ p.legal {
     background    : $smoky-white;
     margin-top    : 1rem;
     margin-bottom : 1rem;
-
+    color : white;
     code {
-        background : #FFFFFF;
+        background : lighten($theme-info-color, 45%);
     }
-
     .callout-title {
         font-size : 1rem;
     }
-
     &.callout-block-info {
         border-color : $theme-info-color;
         background   : lighten($theme-info-color, 35%);
         .callout-title {
-            color : darken($theme-info-color, 15%);
+            color : white;
         }
         a {
-            color : darken($theme-info-color, 15%);
+            color : white;
         }
+    }
+    &.callout-block-info.small {
+        border-color   : lighten($theme-info-color, 10%);
+        background   : lighten($theme-info-color, 45%);
     }
     &.callout-block-success {
         border-color : $theme-success-color;
@@ -1136,4 +1132,21 @@ div.code-toolbar > .toolbar span:focus {
 
 .command-line-prompt > span[data-prompt]:before {
     content : attr(data-prompt);
+}
+
+
+
+pre[class*=language-]:before, pre[class*=language-]:after {
+    box-shadow: 0px 10px 25px $color-blue;
+}
+pre[class*=language-] > code {
+    padding:20px 10px !important;
+    @include border-radius(4px);
+    *>{
+        @include border-radius(4px);
+    }
+    border-left: 30px solid $color-blue;
+    box-shadow: -1px 0px 0px 0px $color-blue, 0px 0px 0px 1px $color-blue;
+    background-color: #FDFDFD;
+    background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
 }

@@ -1,36 +1,34 @@
 /* ============= Base ============= */
-@mixin trans($count: 0.3s, $properties: all, $transition: ease-in-out) {
-	transition         : $properties $count $transition;
-	-webkit-transition : $properties $count $transition;
-	-moz-transition    : $properties $count $transition;
-	-o-transition      : $properties $count $transition;
-}
-@mixin blue-shadow($depth: 20px, $alpha: 0.1) {
-	-webkit-box-shadow : 0px $depth/2 $depth rgba(red($color-blue), green($color-blue), blue($color-blue), $alpha) !important;
-	-moz-box-shadow    : 0px $depth/2 $depth rgba(red($color-blue), green($color-blue), blue($color-blue), $alpha) !important;
-	box-shadow         : 0px $depth/2 $depth rgba(red($color-blue), green($color-blue), blue($color-blue), $alpha) !important;
-}
-@mixin square($size: 60px, $max-size: $size) {
-	width      : $size !important;
-	height     : $size !important;
-	max-width  : $max-size !important;
-	max-height : $max-size !important;
-}
-/*********** Theme Generic **********/
+
 @import "colors";
+@import "mixins";
+
+@media screen and (min-width : 320px) {
+    html, body, .docs-article p {
+        font-size   : calc(14px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
+        line-height : calc(25px + (30 - 25) * ((100vw - 300px) / (1600 - 300)));
+    }
+}
+@media screen and (min-width : 900px) {
+    html, body, .docs-article p {
+        font-size   : 1.075rem;
+        line-height : 2rem;
+    }
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: $theme-text-color-secondary;
+    font-family             : 'Poppins', sans-serif;
+    -webkit-font-smoothing  : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+    color                   : $theme-text-color-secondary;
     //padding-top: 69px;
-    padding-top: 100px;
-	font-weight: 500 !important;
+    padding-top             : 100px;
+    font-weight             : 500 !important;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Poppins', sans-serif;
-	color: $theme-text-color-primary;
-	font-weight: 600;
+    font-family : 'Poppins', sans-serif;
+    color       : $theme-text-color-primary;
+    font-weight : 700;
 }
 //code {
 //	background: $theme-bg-lighter !important;
@@ -39,306 +37,279 @@ h1, h2, h3, h4, h5, h6 {
 //	@include border-radius(8px);
 //}
 .table-bordered th, .table-bordered td {
-	//border-color: $theme-divider;
+    border-color: $theme-divider;
+    @include border-radius(4px);
+    *>{
+        @include border-radius(4px);
+    }
 }
 .table th, .table td {
-	//border-color: $theme-divider;
+    border-color: $theme-divider;
+    @include border-radius(4px);
+    *>{
+        @include border-radius(4px);
+    }
 }
 .table thead th {
-	//border-color: $theme-divider;
+    //border-color: $theme-divider;
 }
 .table-striped tbody tr:nth-of-type(odd) {
-	//background-color: $smoky-white;
+    //background-color: $smoky-white;
 }
 .table-dark th, .table-dark td, .table-dark thead th {
-	border-color: lighten($theme-text-color-primary, 20%);
+    border-color : lighten($theme-text-color-primary, 20%);
 }
 .popover {
-	border-color: darken($theme-bg-light, 5%);
+    border-color : darken($theme-bg-light, 5%);
 }
-.bs-popover-left>.arrow::before, .bs-popover-auto[x-placement^="left"]>.arrow::before {
-	border-left-color: darken($theme-bg-light, 5%);
+.bs-popover-left > .arrow::before, .bs-popover-auto[x-placement^="left"] > .arrow::before {
+    border-left-color : darken($theme-bg-light, 5%);
 }
-.bs-popover-right>.arrow::before, .bs-popover-auto[x-placement^="right"]>.arrow::before {
-	border-right-color: darken($theme-bg-light, 5%);
+.bs-popover-right > .arrow::before, .bs-popover-auto[x-placement^="right"] > .arrow::before {
+    border-right-color : darken($theme-bg-light, 5%);
 }
-.bs-popover-top>.arrow::before, .bs-popover-auto[x-placement^="top"]>.arrow::before {
-	border-top-color: darken($theme-bg-light, 5%);
+.bs-popover-top > .arrow::before, .bs-popover-auto[x-placement^="top"] > .arrow::before {
+    border-top-color : darken($theme-bg-light, 5%);
 }
-.bs-popover-bottom>.arrow::before, .bs-popover-auto[x-placement^="bottom"]>.arrow::before {
-	border-bottom-color: darken($theme-bg-light, 5%);
+.bs-popover-bottom > .arrow::before, .bs-popover-auto[x-placement^="bottom"] > .arrow::before {
+    border-bottom-color : darken($theme-bg-light, 5%);
 }
 
 a.theme-link {
-	color: $theme-text-color-primary;
-	text-decoration: underline;
-    -webkit-text-decoration-color: rgba($theme-text-color-primary,0.3);
-    text-decoration-color: rgba($theme-text-color-primary,0.3);
+    color                         : $theme-text-color-primary;
+    text-decoration               : underline;
+    -webkit-text-decoration-color : rgba($theme-text-color-primary, 0.3);
+    text-decoration-color         : rgba($theme-text-color-primary, 0.3);
     &:hover {
-	    color: $theme-color-primary;
-	    -webkit-text-decoration-color: rgba($theme-color-primary,0.8);
-	        text-decoration-color: rgba($theme-color-primary,0.8);
+        color                         : $theme-color-primary;
+        -webkit-text-decoration-color : rgba($theme-color-primary, 0.8);
+        text-decoration-color         : rgba($theme-color-primary, 0.8);
     }
 }
 
 .btn {
-	font-weight: 600;
-	padding: 0.6rem 1.25rem;
-	@include transition (all 0.4s ease-in-out);
-	border: none;
-	&:hover,&:active,&:focus {
-		box-shadow: 0 5px 15px 0 rgba(red($color-blue), green($color-blue), blue($color-blue),0.15),0 12px 24px -6px rgba(red($color-blue), green($color-blue), blue($color-blue),0.15);
-	}
+    font-weight : 600;
+    padding     : 0.6rem 1.25rem;
+    @include transition (all 0.4s ease-in-out);
+    border      : none;
+    &:hover, &:active, &:focus {
+        box-shadow : 0 5px 15px 0 rgba(red($color-blue), green($color-blue), blue($color-blue), 0.15), 0 12px 24px -6px rgba(red($color-blue), green($color-blue), blue($color-blue), 0.15);
+    }
 }
 
 .btn:focus, .btn.focus {
-	box-shadow: none !important;
+    box-shadow : none !important;
 }
 
 .btn-primary {
-   background: $theme-color-primary;
+    background : $theme-color-primary;
 }
 
 .btn-secondary {
-	background: $theme-text-color-secondary;
-	color: #f9f9f9;
+    background : $theme-text-color-secondary;
+    color      : #F9F9F9;
 }
 
 .btn-light {
-	background: $theme-bg-light;
-	color: $theme-color-primary;
-	&:hover {
-		background: $theme-bg-light;
-		color: $theme-color-primary;
-	}
+    background : $theme-bg-light;
+    color      : $theme-color-primary;
+    &:hover {
+        background : $theme-bg-light;
+        color      : $theme-color-primary;
+    }
 }
 
 
 .form-control {
-	padding-top: 0.875rem;
-	padding-bottom: 0.875rem;
-	height: 2.75rem;
-	border-color: darken($theme-bg-light, 5%);
-	&:focus {
-		box-shadow: 0 5px 15px 0 rgba(red($color-blue), green($color-blue), blue($color-blue),0.25);
-		outline: none;
-	}
+    padding-top    : 0.875rem;
+    padding-bottom : 0.875rem;
+    height         : 2.75rem;
+    border-color   : darken($theme-bg-light, 5%);
+    &:focus {
+        box-shadow : 0 5px 15px 0 rgba(red($color-blue), green($color-blue), blue($color-blue), 0.25);
+        outline    : none;
+    }
 }
 .theme-icon-holder {
-	display: inline-block;
-	background: none;
-	color: $theme-color-primary;
-	width: 32px;
-	height: 32px;
-	padding-top: 3px;
-	font-size: 1rem;
-	text-align: center;
-	@include border-radius(50%);
+    display     : inline-block;
+    background  : none;
+    color       : $theme-color-primary;
+    width       : 32px;
+    height      : 32px;
+    padding-top : 3px;
+    font-size   : 1rem;
+    text-align  : center;
+    @include border-radius(50%);
 
-	.svg-inline---fa {
-		color: $theme-color-primary;
-	}
+    .svg-inline---fa {
+        color : $theme-color-primary;
+    }
 }
 .theme-bg-light {
-	background: $theme-bg-light;
+    background : $theme-bg-light;
 }
 .theme-bg-dark {
-	background: $theme-bg-dark;
+    background : $theme-bg-dark;
 }
 
-//.theme-bg-shapes-right:hover:before {
-//	background: rgba(255, 255, 255, 0.1);
-//	position: absolute;
-//	right: 60px;
-//	top: 40px;
-//	-moz-transform: skew(95deg, 110deg);
-//	-o-transform: skew(95deg, 110deg);
-//	-ms-transform: skew(95deg, 110deg);
-//	-webkit-transform: skew(95deg, 110deg);
-//	transform: skew(95deg, 110deg);
-//}
-//.theme-bg-shapes-right:hover:after {
-//	background: rgba(255, 255, 255, 0.15);
-//	position: absolute;
-//	right: 30px;
-//	top: 100px;
-//	border-radius: 600px;
-//	-moz-transform: skew(2deg, 70deg);
-//	-o-transform: skew(2deg, 70deg);
-//	-ms-transform: skew(2deg, 70deg);
-//	-webkit-transform: skew(2deg, 70deg);
-//	transform: skew(2deg, 70deg);
-//}
-//.theme-bg-shapes-left:hover:before {
-//	background: rgba(255, 255, 255, 0.1);
-//	position: absolute;
-//	left: -90px;
-//	top: 50px;
-//	border-radius: 20px;
-//	-moz-transform: skew(65deg, -12deg);
-//	-o-transform: skew(65deg, -12deg);
-//	-ms-transform: skew(65deg, -12deg);
-//	-webkit-transform: skew(65deg, -12deg);
-//	transform: skew(65deg, -12deg);
-//}
-//.theme-bg-shapes-left:hover:after {
-//	background: rgba(255, 255, 255, 0.15);
-//	position: absolute;
-//	left: 100px;
-//	top: 80px;
-//	border-radius: 50px;
-//	-moz-transform: skew(-25deg, 60deg);
-//	-o-transform: skew(-25deg, 60deg);
-//	-ms-transform: skew(-25deg, 60deg);
-//	-webkit-transform: skew(-25deg, 60deg);
-//	transform: skew(-25deg, 60deg);
-//}
+.theme-bg-shapes-right,
+.theme-bg-shapes-left {
+    &:before, &:after {
+        transition-delay : .3s;
+        @include trans(10s);
+        position         : absolute !important;
 
+        @include blue-shadow(10px, 0.2);
+        @include border-radius(6px);
+        z-index          : 0 !important;
+        padding          : 30px !important;
+        color            : rgba(250, 250, 255, 0.5) !important;
+        background       : rgba(0, 0, 25, 0.3) !important;
+        //font-size        : 65% !important;
+        //line-height      : 125%;
 
+        font-size        : calc(12px + (25 - 15) * ((100% - 300px) / (1600 - 300)));
+        line-height      : calc(22px + (25 - 15) * ((100% - 300px) / (1600 - 300)));
 
-$TXT: rgba(250,250,255,0.1);
-$BG: rgba(0, 0, 25, 0.25);
+        letter-spacing   : 2px !important;
+        text-align       : justify !important;
+        text-transform   : uppercase !important;
+        max-width        : 25%;
+        height           : 35%;
+        max-height       : 35%;
+        overflow         : hidden;
+        &:focus {
+            background       : rgba(0, 100, 225, 0.65) !important;
+            max-width        : 20%;
+            height           : 20%;
+            max-height       : 20%;
+        }
+    }
+}
 .theme-bg-shapes-right {
-	z-index:0 !important;
-	padding : 20px !important;
-	position: absolute;
-	height: 100%;
-	width: 100vw;
-	right: 0px;
-	top: 0;
-	overflow:hidden;
-	&:before {
-		@include trans(9s);
-		@include border-radius(8px);
-		@include skew(-15,-15);
-		@include transform-origin(top right);
-		@include blue-shadow(40px,0.4);
-		z-index:0 !important;
-		padding : 40px !important;
-		color:$TXT;
-		background: $BG;
-		font-size : 0.85em;
-		width: 400px;
-		height: auto;
-		content: "{DF1:Popup-Cntrd:R0-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'On the leftmost portion of the document is the timestamp. Each Closed Caption Data (CCD) packet has a timestamp, whichcorresponds with the frame of the asset containing the CCD packet. For r eadability sake, the timestamp is only printed out when specific Global Control Codes are encountered.'";
-	    position: absolute;
-	    right: 400px;
-	    top: -200px;
-	}
-	&:after {
-		@include trans(7s);
-		@include border-radius(8px);
-		@include skew(-15,-15);
-		@include transform-origin(top right);
-		@include blue-shadow(40px,0.4);
-		z-index:0 !important;
-		padding : 40px !important;
-		position: absolute;
-		color:$TXT;
-		background: $BG;
-		font-size : 1em;
-		width: 400px;
-		height: auto;
-		content: "{DF0:Popup-Cntrd:R0-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'The Closed Caption Descriptor File contains a decoded binary representation'";
-	    right: 250px;
-	    top: -230px;
-	}
+    position : absolute;
+    z-index  : 0 !important;
+    padding  : 20px !important;
+    height   : 100%;
+    width    : 100vw;
+    right    : 0px;
+    top      : 0;
+    overflow : hidden;
+    &:before {
+        transition-delay : .4s !important;
+        @include skew(20,-20);
+        @include transform-origin(top right);
+        right            : 14%;
+        top              : -18%;
+        content          : "3   {DF1: Popup-Cntrd: R0-C31: Anchor-UL-V70-H0:Pen} {SPA: Pen-[Size:Standard,Offset:Normal]} 'On the leftmost portion of the document is the timestamp. Each Closed Caption Data (CCD) packet has a timestamp, whichcorresponds with the frame of the asset containing the CCD packet. For r eadability sake, the timestamp is only printed out when specific Global Control Codes are encountered.'";
+    }
+    &:after {
+        transition-delay : .5s !important;
+        @include skew(15,-35);
+        @include transform-origin(top right);
+        right            : 4%;
+        top              : 2%;
+        content          : "4   {DF0: Popup-Cntrd: R0-C31: Anchor-UL-V70-H0: Pen} {SPA: Pen-[Size:Standard,Offset:Normal]} 'The Closed Caption Descriptor File contains a decoded binary representation...'";
+
+    }
 }
 .theme-bg-shapes-left {
-	z-index:0 !important;
-	padding : 40px !important;
-	position: absolute;
-	height: 100%;
-	width: 100vw;
-	left: 0px;
-	top: 0px;
-	overflow:hidden;
-	&:before {;
-		@include trans(8s);
-		@include border-radius(8px);
-		@include skew(15,15);
-		@include transform-origin(top left);
-		@include blue-shadow(40px,0.4);
-		z-index:0 !important;
-		padding : 20px !important;
-		position: absolute;
-		color:$TXT;
-		background: $BG;
-		font-size : 0.85em;
-		width: 400px;
-		height: auto;
-		content: "{DF3:Popup-Cntrd:R5-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'Tab Control codes are used for positioning the captions. Specifically, they tell how far to move to the right from the current position. Used in conjunction with the Column Number from the Address PAC, it allows the captions to be placed anywhere in the text field. '";
-	    left: 100px;
-	    top: -50;
-	}
-	&:after {
-		@include trans(6s);
-		@include border-radius(8px);
-		@include skew(15,15);
-		@include transform-origin(top left);
-		@include blue-shadow(40px,0.4);
-		z-index:0 !important;
-		padding : 20px !important;
-		position: absolute;
-		color:$TXT;
-		background: $BG;
-		font-size : 0.95em;
-		width: 400px;
-		height: auto;
-		content: "{DF0:Popup-Cntrd:R0-C31:Anchor-UL-V70-H0:Pen} {SPA:Pen-[Size:Standard,Offset:Normal]} 'The Global Control are represented inline by wrapping the mnemonic code with braces.'";
-	    left: 200px;
-	    top: -60px;
-	}
+    z-index  : 0 !important;
+    padding  : 40px !important;
+    position : absolute;
+    height   : 100%;
+    width    : 100vw;
+    left     : 0px;
+    top      : 0px;
+    overflow : hidden;
+    &:before {
+        transition-delay : .6s !important;
+        @include skew(-20, 5);
+        @include transform-origin(top left);
+        left             : 30%;
+        top              : -10%;
+        content          : "1   {DF3: Popup-Cntrd: R5-C31: Anchor-UL-V70-H0: Pen} {SPA: Pen-[Size:Standard, Offset:Normal]} 'Tab Control codes are used for positioning the captions. Specifically, they tell how far to move to the right from the current position. Used in conjunction with the Column Number from the Address PAC, it allows the captions to be placed anywhere in the text field. '";
+    }
+    &:after {
+        transition-delay : .7s !important;
+        @include skew(-22, 13);
+        @include transform-origin(top left);
+        left             : 7%;
+        top              : 11%;
+        content          : "2   {DF0: Popup-Cntrd: R0-C31: Anchor-UL-V70-H0: Pen} {SPA: Pen-[Size:Standard, Offset:Normal]} 'The Global Control are represented inline by wrapping the mnemonic code with braces.'";
+    }
 }
 .page-header.theme-bg-dark {
-	background-color : #BBC2FF;
-	height           : 440px !important;
-	background       : linear-gradient(0deg, #BBC2FF 2%, #515ADA 100%);
-	position         : relative;
-	@include trans(2s, background, ease-in-out);
-	&:hover {
-		.theme-bg-shapes-right {
-			&:before {
-				right: 0px;
-				top: 40px;
-				@include blue-shadow(40px,0.8);
-				@include skew(-5,-10);
-			}
-			&:after {
-				right: -250px;
-				top: 100px;
-				@include skew(-5,-10);
-			}
-		}
-		.theme-bg-shapes-left {
-			&:before {
-				left: -100px;
-				top: -60px;
-				@include skew(-15,-15);
-			}
-			&:after {
-				left: -300px;
-				top: 200px;
-				@include skew(-15,-15);
-			}
-		}
-	}
+    height           : 440px !important;
+    background-color : #BBC2FF;
+    background       : linear-gradient(0deg, #BBC2FF 2%, #515ADA 100%);
+    position         : relative;
+    //@include trans(2s, background, ease-in-out);
+    @media (max-width : 768px) {
+        @include trans(.3s, background, ease-in);
+        .theme-bg-shapes-right {
+            display : none !important;
+            * {display : none !important;}
+        }
+        .theme-bg-shapes-left {
+            display : none !important;
+            * {display : none !important;}
+        }
+    }
+    &:hover {
+        .theme-bg-shapes-right {
+            &:before {
+                @include skew(5, -15);
+                background  : rgba(0, 20, 45, 0.5) !important;
+                right       : 5%;
+                top         : 5%;
+                max-width   : 250px !important;
+                font-size   : calc(7px + (25 - 15) * ((100% - 300px) / (1600 - 300)));
+                line-height : calc(13px + (25 - 15) * ((100% - 300px) / (1600 - 300)));
+            }
+            &:after {
+                @include skew(5, -15);
+                background  : rgba(0, 20, 45, 0.5) !important;
+                right       : -2%;
+                top         : 25%;
+                max-width   : 250px !important;
+                font-size   : calc(7px + (25 - 15) * ((100% - 300px) / (1600 - 300)));
+                line-height : calc(13px + (25 - 15) * ((100% - 300px) / (1600 - 300)));
+            }
+        }
+        .theme-bg-shapes-left {
+            &:before {
+                @include skew(20, 15);
+                background  : rgba(0, 20, 45, 0.5) !important;
+                left        : 5%;
+                top         : 5%;
+                max-width   : 250px !important;
+                font-size   : calc(7px + (25 - 15) * ((100% - 300px) / (1600 - 300)));
+                line-height : calc(13px + (25 - 15) * ((100% - 300px) / (1600 - 300)));
+            }
+            &:after {
+                @include skew(20, 15);
+                background  : rgba(0, 20, 45, 0.5) !important;
+                left        : -2%;
+                top         : 25%;
+                max-width   : 250px !important;
+                font-size   : calc(7px + (25 - 15) * ((100% - 300px) / (1600 - 300)));
+                line-height : calc(13px + (25 - 15) * ((100% - 300px) / (1600 - 300)));
+            }
+        }
+    }
 }
-
-
-
-
 
 
 /*********** Theme Utilities **********/
 .border-radius-0 {
-	@include border-radius(0);
+    @include border-radius(0);
 }
 .font-style-normal {
-	font-style: normal !important;
+    font-style : normal !important;
 }
 .single-col-max {
-	max-width: $single-col-max;
+    max-width : $single-col-max;
 }
 
 
@@ -346,68 +317,84 @@ $BG: rgba(0, 0, 25, 0.25);
 
 .site-logo {
     .logo-text {
-	    color: $theme-text-color-primary;
-	    font-size: 1.5rem;
-	    font-weight:bold;
+        color       : $theme-text-color-primary;
+        font-size   : 1.5rem;
+        font-weight : bold;
     }
     .text-alt {
-	    font-weight:300;
+        font-weight : 300;
     }
-	.navbar-brand {
-		font-size: 2rem;
-		font-weight: 600;
-		padding-top: 0;
-	}
+    .navbar-brand {
+        font-size   : 2rem;
+        font-weight : 600;
+        padding-top : 0;
+    }
 }
 /* Page headers */
 .page-header {
-	&.theme-bg-dark, &.theme-bg-light {
-		.hero-container {
-			//z-index:1000 !important;
-			.page-heading {
-				color: #fff;
-				font-weight:900;
-			}
-			.page-intro {
-				font-size: 1.855rem;
-				color: #fff;
-				font-weight:200;
-				@include opacity(0.65);
-			}
-			// TODO Add Mobile
-		}
-	}
+    &.theme-bg-dark, &.theme-bg-light {
+        .hero-container {
+            //z-index:1000 !important;
+            .page-heading {
+                color       : #FFFFFF;
+                font-weight : 900;
+            }
+            .page-intro {
+                font-size   : 1.855rem;
+                color       : #FFFFFF;
+                font-weight : 200;
+                @include opacity(0.65);
+            }
+            @media (max-width : 768px) {
+                .page-heading {
+                    font-size   : 2.5rem !important;
+                    color       : #FFFFFF;
+                    font-weight : 900;
+                }
+                .page-intro {
+                    font-size   : 1.2rem !important;
+                    padding     : 0 40px;
+                    color       : #FFFFFF;
+                    font-weight : 200;
+                    @include opacity(0.75);
+                }
+            }
+        }
+    }
 }
 .social-list {
-	li {
-		font-size: 1.125rem;
-		background: $theme-bg-light;
-		width: 32px;
-		height: 32px;
-		text-align: center;
-		@include border-radius(50%);
-		padding-top: 2px;
-		a {
-			color: lighten($theme-color-primary, 10%);
-			&:hover {
-				color: $theme-color-primary;
-			}
-		}
+    li {
+        font-size   : 1.125rem;
+        background  : $theme-bg-light;
+        width       : 32px;
+        height      : 32px;
+        text-align  : center;
+        @include border-radius(50%);
+        padding-top : 2px;
+        a {
+            color : lighten($theme-color-primary, 10%);
+            &:hover {
+                color : $theme-color-primary;
+            }
+        }
 
-		&:not(:last-child) {
-			margin-right: 0.875rem;
-		}
-	}
+        &:not(:last-child) {
+            margin-right : 0.875rem;
+        }
+    }
 }
 .header {
-	@include box-shadow(0 1px 4px 0 rgba(red($color-blue), green($color-blue), blue($color-blue),.1));
-	background: #fff;
+    @include box-shadow(0 1px 4px 0 rgba(red($color-blue), green($color-blue), blue($color-blue), .1));
+    background : #FFFFFF;
+    &:hover {
+        @include box-shadow(0 1px 4px 20px rgba(red($color-blue), green($color-blue), blue($color-blue), .5));
+    }
 }
 /* Footer */
 .footer {
-	.copyright {
-		font-size: 0.875rem;
-	}
+    .copyright {
+        font-size : 0.875rem;
+    }
 }
 /* Page related */
 

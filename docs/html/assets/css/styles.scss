@@ -213,7 +213,7 @@ body {
             font-weight  : 500;
             .docs-time {font-weight : 600;
                 color               : $color-cool-grey-8 !important;
-                font-size           : 18px !important;
+                font-size           : 17px !important;
                 letter-spacing      : 2px !important;
             }
             h1 {
@@ -221,18 +221,18 @@ body {
                 color         : #000000 !important;
                 margin-bottom : 2rem;
                 position      : relative;
-                font-size     : calc(32px + (56 - 32) * ((100vw - 300px) / (1600 - 300))) !important;
+                font-size     : calc(32px + (56 - 30) * ((100vw - 300px) / (1600 - 300))) !important;
             }
             h2.section-heading {
                 font-weight   : 900;
-                font-size     : calc(28px + (48 - 28) * ((100vw - 300px) / (1600 - 300))) !important;
+                font-size     : calc(28px + (48 - 26) * ((100vw - 300px) / (1600 - 300))) !important;
                 margin-top    : 35px !important;
                 margin-bottom : 1rem !important;
             }
             h3.section-heading {
                 font-weight   : 900;
                 /*font-size     : 2.8rem;*/
-                font-size     : calc(24px + (40 - 24) * ((100vw - 300px) / (1600 - 300))) !important;
+                font-size     : calc(24px + (40 - 22) * ((100vw - 300px) / (1600 - 300))) !important;
                 margin-top    : 15px !important;
                 margin-bottom : 2rem !important;
                 color         : $color-blue;
@@ -257,7 +257,7 @@ body {
                 &.section-intro {
                     color        : $color-blue !important;
                     font-weight  : 300 !important;
-                    font-size    : 1.4rem !important;
+                    font-size    : 1.3rem !important;
                     line-height  : 2.2rem !important;
                     margin       : 3.5rem 0 !important;
                     padding-left : 20px;
@@ -270,30 +270,30 @@ body {
                 }
                 h2.section-heading {
                     font-weight   : 900;
-                    font-size     : calc(28px + (48 - 28) * ((100vw - 300px) / (1600 - 300))) !important;
+                    font-size     : calc(28px + (48 - 26) * ((100vw - 300px) / (1600 - 300))) !important;
                     margin-top    : 25px !important;
                     margin-bottom : 1rem !important;
                 }
                 > h3 {
                     font-weight   : 200 !important;
-                    font-size     : calc(18px + (48 - 19) * ((100vw - 300px) / (1600 - 300))) !important;
+                    font-size     : calc(18px + (48 - 17) * ((100vw - 300px) / (1600 - 300))) !important;
                     margin-top    : 50px !important;
                     margin-bottom : 1.4rem !important;
                     color         : $color-xfinity-pumkin;
                     &.title {
-                        font-size : calc(20px + (46 - 20) * ((100vw - 300px) / (1600 - 300))) !important;
+                        font-size : calc(20px + (46 - 18) * ((100vw - 300px) / (1600 - 300))) !important;
                     }
                 }
                 > h4, h4, .h4 {
                     font-weight   : 900;
-                    font-size     : 1.85rem;
+                    font-size     : 1.65rem;
                     margin-top    : 15px;
                     margin-bottom : 2.75rem;
                     color         : $color-blue;
                 }
                 >, h5, h5, .h5 {
                     font-weight   : 700 !important;
-                    font-size     : 1.5rem !important;
+                    font-size     : 1.3rem !important;
                     margin-top    : 45px !important;
                     margin-bottom : 1.2rem;
                 }
@@ -451,19 +451,19 @@ body {
 
                 }
                 .panel-group {
-                    margin-top    : 65px;
-                    border-radius : 4px !important;
+                    margin-top    : 75px;
+                    border-radius : 6px !important;
                     font-size     : small;
                     .panel {
                         margin-top    : 35px;
-                        border-radius : 4px !important;
+                        border-radius : 6px !important;
                         @include blue-shadow();
                         @include trans(.3s);
                         margin        : 10px 0px !important;
                         &.panel-default {}
                         .panel-heading {
                             @include trans(.3s);
-                            border-radius    : 4px !important;
+                            border-radius    : 6px !important;
 
                             background-color : $color-blue;
                             text-decoration  : none !important;
@@ -481,7 +481,7 @@ body {
                             h4.panel-title {
                                 font-weight   : 400;
                                 font-size     : 18px !important;
-                                border-radius : 4px !important;
+                                border-radius : 6px !important;
                                 padding       : 10px;
                                 color         : white;
                                 a {
@@ -594,7 +594,7 @@ b, .bold {
         text-align    : left;
         color         : $color-cool-grey-6;
         display       : block !important;
-        border-radius : 4px;
+        border-radius : 6px;
     }
 }
 .language {
@@ -660,7 +660,7 @@ ol.guidelines > li {
     position         : absolute;
     width            : 3px;
     height           : 100%;
-    border-radius    : 1rem;
+    border-radius    : 30px;
 }
 div.outline-indicator {
     display    : block !important;
@@ -683,13 +683,13 @@ span.outline-indicator {
 
 .docs-nav {
     &.navbar {
-        width : 400px;
+        width : 340px;
     }
     position : relative !important;
     a.nav-link {
         display  : block;
         position : relative !important;
-        padding  : 0px 240px 15px 10px;
+        padding  : 0px 40px 10px 10px;
         color    : $color-cool-grey-10;
         > span {
             display : inline-block;
@@ -711,7 +711,7 @@ span.outline-indicator {
                 .outline-indicator {
                     display    : block !important;
                     color      : $color-cool-grey-8 !important;
-                    max-width  : 60px !important;
+                    max-width  : 50px !important;
                     text-align : right !important;
                     position   : absolute !important;
                     top        : 10px !important;
@@ -742,7 +742,7 @@ a.nav-link {
 .docs-nav a.nav-link {
     display  : block;
     position : relative !important;
-    padding  : 0px 50px 15px 15px;
+    padding  : 0px 30px 5px 15px;
     color    : $color-cool-grey-10;
 }
 .nav-item.section-title {
@@ -793,9 +793,9 @@ table {
     border              : none !important;
     border-style        : none !important;
     border-radius       : 8px !important;
-    //-moz-border-radius:8px !important;
-    //-webkit-border-radius:8px !important;
-    //border-radius:8px !important;
+    -moz-border-radius:8px !important;
+    -webkit-border-radius:8px !important;
+    border-radius:8px !important;
 
     border              : none !important;
     border-top-color    : transparent !important;
@@ -912,8 +912,8 @@ img {
     color             : white !important;
     border-radius     : 8px !important;
     border-left-width : 60px !important;
-    padding           : 0px 25% 0px 0px !important;
-    margin            : 35px 0px 55px 0px !important;
+    padding           : 0px 5% 0px 0px !important;
+    margin            : 30px 0px 40px 0px !important;
     position          : relative !important;
     span.callout-icon-holder {
         position  : absolute !important;
@@ -928,7 +928,7 @@ img {
     }
     > .content {
         color   : white !important;
-        padding : 20px 20px 20px 30px !important;
+        padding : 20px 20px 15px 30px !important;
         margin  : 0px !important;
         a, li {
             color : white !important;
@@ -936,20 +936,47 @@ img {
         }
         > p {
             color       : white !important;
-            margin      : 5px 0 15px 0 !important;
-            font-size   : 17px;
-            line-height : 26px;
-            text-align  : justify;
+            margin      : 5px 0 16px 0 !important;
+            font-size   : 16px;
+            line-height : 24px;
+            text-align  : left;
         }
         > h4.callout-title {
             display     : block;
-            display     : block;
             padding     : 0px !important;
             margin      : 0 0 10px 0 !important;
-            font-weight : 900 !important;
-            font-size   : 2rem !important;
-            line-height : 3rem;
+            font-weight : 800 !important;
+            font-size   : 1.8rem !important;
+            line-height : 2.8rem;
             color       : white !important;
+        }
+    }
+    &.small {
+        border-radius     : 6px !important;
+        >.content {
+            color   : white !important;
+            padding : 15px 15px 10px 20px !important;
+            margin  : 0px !important;
+            a, li {
+                color : white !important;
+                clear : left !important;
+            }
+            > p {
+                color       : white !important;
+                margin      : 5px 0 8px 0 !important;
+                font-size   : 15px;
+                line-height : 20px;
+                text-align  : left;
+            }
+            > h4.callout-title {
+                display     : block;
+                padding     : 0px !important;
+                margin      : 5px 0 0 0 !important;
+                font-weight : 500 !important;
+                font-size   : 1.3rem !important;
+                line-height : 1.8rem;
+                color       : white !important;
+            }
         }
     }
 }
