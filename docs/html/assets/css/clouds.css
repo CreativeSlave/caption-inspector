@@ -1,9 +1,9 @@
-#content {
-    position: fixed !important;
-    color:white;
-    background-color : RGBA(138, 154, 254, 1.00);
-    background-image : linear-gradient(0deg, RGBA(167, 196, 255, 1.00) 10%, RGBA(67, 96, 255, 1) 40%, RGBA(167, 196, 255, 1.00) 10%) !important;
-    width            : 100vw;
-    height           : 97vh;
-    margin-top       : 3vh;
-}
+/*#content {*/
+    /*position: fixed !important;*/
+    /*color:white;*/
+    /*background-color : RGBA(138, 154, 254, 1.00);*/
+    /*background-image : linear-gradient(0deg, RGBA(167, 196, 255, 1.00) 10%, RGBA(67, 96, 255, 1) 40%, RGBA(167, 196, 255, 1.00) 10%) !important;*/
+    /*width            : 100vw;*/
+    /*height           : 97vh;*/
+    /*margin-top       : 3vh;*/
+/*}*/

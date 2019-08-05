@@ -33,8 +33,8 @@
  */
 class CloudGenerator {
     static colors = [
-        'rgba(255,255,255,0.2)', 'rgba(255,255,255,0.6)', 'rgba(67, 96, 255, 0.7)',
-        'rgba(205,205,215,0.7)'
+        'rgba(255,255,255,0.2)', 'rgba(245,245,255,0.6)', 'rgba(67, 96, 255, 0.7)',
+        'rgba(205,205,225,0.6)'
     ];
     /**
      * Cloud Generator
@@ -143,7 +143,7 @@ class CloudGenerator {
         console.log("Generating Clouds now!");
         try {
             let cloud = document.getElementById("cloud");
-            cloud.style.boxShadow = CloudGenerator.boxShadows(60);
+            cloud.style.boxShadow = CloudGenerator.boxShadows(30);
             console.info(cloud);
         } catch (er) {
             console.warn(er);
